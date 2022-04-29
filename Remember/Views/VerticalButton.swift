@@ -13,7 +13,7 @@ struct VerticalButton: View {
             .fill(Color.white)
             .frame(width: 150, height: 200)
             .cornerRadius(10)
-            .shadow(color: Color(hex: "5F84C3"), radius: 5)
+            .shadow(color: Color("shadow"), radius: 5)
     }
 }
 
