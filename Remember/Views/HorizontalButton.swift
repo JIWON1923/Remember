@@ -9,11 +9,14 @@ import SwiftUI
 
 struct HorizontalButton: View {
     var body: some View {
-        Rectangle()
-            .fill(Color.white)
-            .cornerRadius(10)
-            .frame(width: 350, height: 120)
-            .shadow(color: Color("shadow"), radius: 5)
+            
+            Rectangle()
+                .fill(Color.white)
+                .cornerRadius(10)
+                .frame(width: 350, height: 50)
+                .shadow(color: Color("shadow"), radius: 5)
+                .padding(3)
+        
     }
 }
 

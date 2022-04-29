@@ -9,11 +9,13 @@ import SwiftUI
 
 struct VerticalButton: View {
     var body: some View {
+        
         Rectangle()
             .fill(Color.white)
-            .frame(width: 150, height: 200)
+            .frame(width: 130, height: 180)
             .cornerRadius(10)
             .shadow(color: Color("shadow"), radius: 5)
+        
     }
 }
 
