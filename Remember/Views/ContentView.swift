@@ -9,8 +9,37 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        TabView {
+            Text("Home")
+                .tabItem {
+                    Image(systemName: "house.fill")
+                    Text("메인")
+                }
+            
+            Text("Pencil")
+                .tabItem {
+                    Image(systemName: "pencil")
+                    Text("시험보기")
+                }
+        
+            Text("Plus")
+                .tabItem {
+                    Image(systemName: "plus.circle")
+                    Text("단어장 만들기")
+                }
+            
+            Text("Note")
+                .tabItem {
+                    Image(systemName: "note.text")
+                    Text("단어장 보기")
+                }
+            
+            Text("User")
+                .tabItem {
+                    Image(systemName: "person")
+                    Text("마이페이지")
+                }
+        }
     }
 }
 
