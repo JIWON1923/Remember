@@ -50,6 +50,7 @@ struct MemorizationStatus: View {
                     }
                 }
             }
+            .padding()
         }
     }
 }

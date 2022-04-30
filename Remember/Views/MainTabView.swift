@@ -10,14 +10,16 @@ import SwiftUI
 struct MainTabView: View {
     var body: some View {
         
-        ZStack {
-            Color("background")
-               .ignoresSafeArea() // 배경색 깔기
-            
-            VStack {
-                TodayWords() // 오늘의 단어
-                MemorizationStatus() // 암기 현황
-                Recommend()
+        ScrollView {
+            ZStack {
+                Color("background")
+                    .ignoresSafeArea() // 배경색 깔기
+                
+                VStack {
+                    TodayWords() // 오늘의 단어
+                    MemorizationStatus() // 암기 현황
+                    Recommend()
+                }
             }
         }
     }

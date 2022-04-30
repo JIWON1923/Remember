@@ -19,15 +19,16 @@ struct TodayWords: View {
             VStack(alignment: .leading) {
                 
                 Text("오늘의 단어")
-                    .fontWeight(.bold)
+                    
                 
                 ForEach(words, id:  \.self) { word in
                     
-                    ZStack{
+                    ZStack(alignment: .leading){
                         HorizontalButton()
                         
                         Text(word)
                             .fontWeight(.bold)
+                            .padding()
                     }
                 }
             }

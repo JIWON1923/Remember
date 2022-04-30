@@ -15,25 +15,26 @@ struct Recommend: View {
             Rectangle()
                 .fill(Color.white)
                 .frame(height: 270)
-        
-        VStack(alignment: .leading) {
-            Text("추천 단어장")
-                .fontWeight(.bold)
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack {
-                    ForEach(bookNames, id: \.self) { name in
-                        ZStack {
-                            VerticalButton()
-                            Text(name)
-                                .fontWeight(.bold)
-                        }.padding(.leading, 15)
-                            .padding(.bottom, 15)
-                            .padding(.top, 15)
+            
+            VStack(alignment: .leading) {
+                Text("추천 단어장")
+                    .fontWeight(.bold)
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack {
+                        ForEach(bookNames, id: \.self) { name in
+                            ZStack {
+                                VerticalButton()
+                                Text(name)
+                                    .fontWeight(.bold)
+                            }.padding(.leading, 15)
+                                .padding(.bottom, 15)
+                                .padding(.top, 15)
+                        }
                     }
                 }
             }
+            .padding()
         }
-    }
     }
 }
 
