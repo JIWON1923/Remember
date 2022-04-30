@@ -25,7 +25,7 @@ struct ContentView: View {
                     Text("시험보기")
                 }
         
-            Text("Plus")
+            CreateVocabulary()
                 .tabItem {
                     Image(systemName: "plus.circle")
                     Text("단어장 만들기")
