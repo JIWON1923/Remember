@@ -31,13 +31,13 @@ struct ContentView: View {
                     Text("단어장 만들기")
                 }
             
-            Text("Note")
+            MyVocabularyTabView()
                 .tabItem {
                     Image(systemName: "note.text")
                     Text("단어장 보기")
                 }
             
-            Text("User")
+            MyPageTabView()
                 .tabItem {
                     Image(systemName: "person")
                     Text("마이페이지")
