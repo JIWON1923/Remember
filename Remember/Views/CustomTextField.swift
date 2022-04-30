@@ -22,26 +22,23 @@ struct CustomTextField: View {
                     .background(Color("background"))
                     .background(
                             Capsule()
-                                //.strokeBorder(Color.black,lineWidth: 0.8)
                                 .background(Color.blue)
                                 .clipped()
                         )
                         .clipShape(Capsule())
-//                    .cornerRadius(20)
                     .lineLimit(1)
-//                    .textFieldStyle(.roundedBorder)
                     
                 ZStack {
                     Circle()
                         .fill(Color("point"))
                         .frame(width: 30, height: 30)
                     Image(systemName: "checkmark")
-                        //.font(Font.title.weight(.semibold))
                         .font(.system(size: 20).weight(.bold))
                         .foregroundColor(.white)
                 }
                 Spacer()
             }
+            .padding()
         }
     }
 }

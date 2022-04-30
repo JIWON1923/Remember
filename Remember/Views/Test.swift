@@ -14,12 +14,14 @@ struct Test: View {
             TabView {
                 ForEach(words, id: \.self) { word in
                     Text(word)
+                        .fontWeight(.bold)
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    
-                        .font(.title)
+                        .font(.largeTitle)
                         .background(Color("background"))
                 }
-            }.tabViewStyle(.page(indexDisplayMode: .always))
+            }
+            .frame(height: 450)
+            .tabViewStyle(.page(indexDisplayMode: .always))
             
             Spacer()
             
