@@ -14,10 +14,15 @@
 		87AED173281BBCC900CF06FF /* HorizontalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AED172281BBCC900CF06FF /* HorizontalButton.swift */; };
 		87AED175281BDBDC00CF06FF /* VerticalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AED174281BDBDC00CF06FF /* VerticalButton.swift */; };
 		87AED177281BDD5F00CF06FF /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AED176281BDD5F00CF06FF /* ColorExtension.swift */; };
-		87BCF0D5281C049600138163 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BCF0D4281C049600138163 /* MainView.swift */; };
+		87BCF0D5281C049600138163 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BCF0D4281C049600138163 /* MainTabView.swift */; };
 		87BCF0D8281C0B1900138163 /* TodayWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BCF0D7281C0B1900138163 /* TodayWords.swift */; };
 		87BCF0DA281C0DD000138163 /* MemorizationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BCF0D9281C0DD000138163 /* MemorizationStatus.swift */; };
 		87BCF0DE281C1CFD00138163 /* Recommend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BCF0DD281C1CFD00138163 /* Recommend.swift */; };
+		87BCF0E0281C355100138163 /* TestTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BCF0DF281C355100138163 /* TestTabView.swift */; };
+		87BCF0E2281C397A00138163 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BCF0E1281C397A00138163 /* Test.swift */; };
+		87BCF0E4281C3ABE00138163 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BCF0E3281C3ABE00138163 /* CustomTextField.swift */; };
+		87BCF0E8281D05B200138163 /* CreateVocabulary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BCF0E7281D05B200138163 /* CreateVocabulary.swift */; };
+		87BCF0EA281D0E7500138163 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BCF0E9281D0E7500138163 /* RoundedButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,10 +34,15 @@
 		87AED172281BBCC900CF06FF /* HorizontalButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalButton.swift; sourceTree = "<group>"; };
 		87AED174281BDBDC00CF06FF /* VerticalButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalButton.swift; sourceTree = "<group>"; };
 		87AED176281BDD5F00CF06FF /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
-		87BCF0D4281C049600138163 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		87BCF0D4281C049600138163 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		87BCF0D7281C0B1900138163 /* TodayWords.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayWords.swift; sourceTree = "<group>"; };
 		87BCF0D9281C0DD000138163 /* MemorizationStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizationStatus.swift; sourceTree = "<group>"; };
 		87BCF0DD281C1CFD00138163 /* Recommend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recommend.swift; sourceTree = "<group>"; };
+		87BCF0DF281C355100138163 /* TestTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTabView.swift; sourceTree = "<group>"; };
+		87BCF0E1281C397A00138163 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		87BCF0E3281C3ABE00138163 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		87BCF0E7281D05B200138163 /* CreateVocabulary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateVocabulary.swift; sourceTree = "<group>"; };
+		87BCF0E9281D0E7500138163 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,13 +95,18 @@
 		87C096C3281BF58A008A05E3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				87BCF0E9281D0E7500138163 /* RoundedButton.swift */,
 				87AED172281BBCC900CF06FF /* HorizontalButton.swift */,
 				87AED174281BDBDC00CF06FF /* VerticalButton.swift */,
 				87AED166281BABC000CF06FF /* ContentView.swift */,
-				87BCF0D4281C049600138163 /* MainView.swift */,
+				87BCF0D4281C049600138163 /* MainTabView.swift */,
 				87BCF0D7281C0B1900138163 /* TodayWords.swift */,
 				87BCF0D9281C0DD000138163 /* MemorizationStatus.swift */,
 				87BCF0DD281C1CFD00138163 /* Recommend.swift */,
+				87BCF0DF281C355100138163 /* TestTabView.swift */,
+				87BCF0E1281C397A00138163 /* Test.swift */,
+				87BCF0E3281C3ABE00138163 /* CustomTextField.swift */,
+				87BCF0E7281D05B200138163 /* CreateVocabulary.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -174,13 +189,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87BCF0E0281C355100138163 /* TestTabView.swift in Sources */,
 				87AED173281BBCC900CF06FF /* HorizontalButton.swift in Sources */,
-				87BCF0D5281C049600138163 /* MainView.swift in Sources */,
+				87BCF0D5281C049600138163 /* MainTabView.swift in Sources */,
+				87BCF0E8281D05B200138163 /* CreateVocabulary.swift in Sources */,
+				87BCF0E4281C3ABE00138163 /* CustomTextField.swift in Sources */,
 				87BCF0DE281C1CFD00138163 /* Recommend.swift in Sources */,
 				87AED175281BDBDC00CF06FF /* VerticalButton.swift in Sources */,
+				87BCF0E2281C397A00138163 /* Test.swift in Sources */,
 				87BCF0D8281C0B1900138163 /* TodayWords.swift in Sources */,
 				87AED167281BABC000CF06FF /* ContentView.swift in Sources */,
 				87BCF0DA281C0DD000138163 /* MemorizationStatus.swift in Sources */,
+				87BCF0EA281D0E7500138163 /* RoundedButton.swift in Sources */,
 				87AED165281BABC000CF06FF /* RememberApp.swift in Sources */,
 				87AED177281BDD5F00CF06FF /* ColorExtension.swift in Sources */,
 			);

@@ -19,7 +19,7 @@ struct ContentView: View {
                     Text("메인")
                 }
             
-            Text("Pencil")
+            TestTabView()
                 .tabItem {
                     Image(systemName: "pencil")
                     Text("시험보기")
