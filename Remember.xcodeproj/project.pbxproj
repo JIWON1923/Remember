@@ -23,6 +23,8 @@
 		87BCF0E4281C3ABE00138163 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BCF0E3281C3ABE00138163 /* CustomTextField.swift */; };
 		87BCF0E8281D05B200138163 /* CreateVocabulary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BCF0E7281D05B200138163 /* CreateVocabulary.swift */; };
 		87BCF0EA281D0E7500138163 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BCF0E9281D0E7500138163 /* RoundedButton.swift */; };
+		87BCF0EC281D14C300138163 /* MyVocabularyTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BCF0EB281D14C300138163 /* MyVocabularyTabView.swift */; };
+		87BCF0EE281D155900138163 /* MyVocaburaly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BCF0ED281D155900138163 /* MyVocaburaly.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,8 @@
 		87BCF0E3281C3ABE00138163 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		87BCF0E7281D05B200138163 /* CreateVocabulary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateVocabulary.swift; sourceTree = "<group>"; };
 		87BCF0E9281D0E7500138163 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		87BCF0EB281D14C300138163 /* MyVocabularyTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyVocabularyTabView.swift; sourceTree = "<group>"; };
+		87BCF0ED281D155900138163 /* MyVocaburaly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyVocaburaly.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,15 +102,17 @@
 				87BCF0E9281D0E7500138163 /* RoundedButton.swift */,
 				87AED172281BBCC900CF06FF /* HorizontalButton.swift */,
 				87AED174281BDBDC00CF06FF /* VerticalButton.swift */,
-				87AED166281BABC000CF06FF /* ContentView.swift */,
-				87BCF0D4281C049600138163 /* MainTabView.swift */,
+				87BCF0E3281C3ABE00138163 /* CustomTextField.swift */,
 				87BCF0D7281C0B1900138163 /* TodayWords.swift */,
 				87BCF0D9281C0DD000138163 /* MemorizationStatus.swift */,
 				87BCF0DD281C1CFD00138163 /* Recommend.swift */,
-				87BCF0DF281C355100138163 /* TestTabView.swift */,
 				87BCF0E1281C397A00138163 /* Test.swift */,
-				87BCF0E3281C3ABE00138163 /* CustomTextField.swift */,
+				87BCF0D4281C049600138163 /* MainTabView.swift */,
+				87BCF0DF281C355100138163 /* TestTabView.swift */,
 				87BCF0E7281D05B200138163 /* CreateVocabulary.swift */,
+				87AED166281BABC000CF06FF /* ContentView.swift */,
+				87BCF0EB281D14C300138163 /* MyVocabularyTabView.swift */,
+				87BCF0ED281D155900138163 /* MyVocaburaly.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -193,12 +199,14 @@
 				87AED173281BBCC900CF06FF /* HorizontalButton.swift in Sources */,
 				87BCF0D5281C049600138163 /* MainTabView.swift in Sources */,
 				87BCF0E8281D05B200138163 /* CreateVocabulary.swift in Sources */,
+				87BCF0EC281D14C300138163 /* MyVocabularyTabView.swift in Sources */,
 				87BCF0E4281C3ABE00138163 /* CustomTextField.swift in Sources */,
 				87BCF0DE281C1CFD00138163 /* Recommend.swift in Sources */,
 				87AED175281BDBDC00CF06FF /* VerticalButton.swift in Sources */,
 				87BCF0E2281C397A00138163 /* Test.swift in Sources */,
 				87BCF0D8281C0B1900138163 /* TodayWords.swift in Sources */,
 				87AED167281BABC000CF06FF /* ContentView.swift in Sources */,
+				87BCF0EE281D155900138163 /* MyVocaburaly.swift in Sources */,
 				87BCF0DA281C0DD000138163 /* MemorizationStatus.swift in Sources */,
 				87BCF0EA281D0E7500138163 /* RoundedButton.swift in Sources */,
 				87AED165281BABC000CF06FF /* RememberApp.swift in Sources */,
