@@ -8,41 +8,57 @@
 import SwiftUI
 
 struct ContentView: View {
-    init() {
-        UITabBar.appearance().backgroundColor = UIColor.white
-    }
+    
+    @State var navigationTitle = "메인화면"
+    
     var body: some View {
-        TabView {
+        NavigationView {
+            VStack {
+                tabViews
+            }
+            .navigationTitle(Text(navigationTitle))
+            .navigationBarBackButtonHidden(true)
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarColor(backgroundColor:  UIColor(Color("point")), tintColor: .white)
+        }
+    }
+    
+    
+    var tabViews: some View {
+        TabView(selection: $navigationTitle) {
+            
             MainTabView()
                 .tabItem {
                     Image(systemName: "house.fill")
                     Text("메인")
-                }
+                }.tag("main")
             
             TestTabView()
                 .tabItem {
                     Image(systemName: "pencil")
                     Text("시험보기")
-                }
-        
+                }.tag("시험보기")
+            
             CreateVocabulary()
                 .tabItem {
                     Image(systemName: "plus.circle")
                     Text("단어장 만들기")
-                }
+                }.tag("단어장 만들기")
             
             MyVocabularyTabView()
                 .tabItem {
                     Image(systemName: "note.text")
                     Text("단어장 보기")
-                }
+                }.tag("단어장 보기")
             
             MyPageTabView()
                 .tabItem {
                     Image(systemName: "person")
                     Text("마이페이지")
-                }
+                }.tag("마이페이지")
+            
         }
+        .accentColor(Color("point"))
     }
 }
 
