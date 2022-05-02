@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Test: View {
+    @State var keyboardHeight: CGFloat = 0
     let words = ["apple", "pear", "cup", "mask", "mouse"]
     var body: some View {
         VStack {
@@ -25,10 +26,10 @@ struct Test: View {
             
             Spacer()
             
-        CustomTextField(placeHolder: "정답을 입력해주세요")
+            CustomTextField(placeHolder: "정답을 입력해주세요")
         }
+        .navigationTitle("오늘의 퀴즈")
     }
-
 }
 
 struct Test_Previews: PreviewProvider {

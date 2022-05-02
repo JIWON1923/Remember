@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var navigationTitle = "메인화면"
+    @State var navigationTitle = "리멤버"
     
     var body: some View {
         NavigationView {
@@ -17,7 +17,6 @@ struct ContentView: View {
                 tabViews
             }
             .navigationTitle(Text(navigationTitle))
-            .navigationBarBackButtonHidden(true)
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarColor(backgroundColor:  UIColor(Color("point")), tintColor: .white)
         }
@@ -31,7 +30,7 @@ struct ContentView: View {
                 .tabItem {
                     Image(systemName: "house.fill")
                     Text("메인")
-                }.tag("main")
+                }.tag("리멤버")
             
             TestTabView()
                 .tabItem {
