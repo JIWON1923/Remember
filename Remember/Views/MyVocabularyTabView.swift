@@ -11,7 +11,7 @@ struct MyVocabularyTabView: View {
     let vocaBooks = ["hihi", "토마토", "어쩌고", "저쩌고"]
     var body: some View {
         List {
-            ForEach(0..<vocaBooks.count) { i in
+            ForEach(0..<vocaBooks.count, id: \.self) { i in
                 NavigationLink(destination: MyVocaburaly(vocaName: vocaBooks[i])) {
                     Text(vocaBooks[i])
                 }

@@ -8,25 +8,31 @@
 import SwiftUI
 
 struct Test: View {
+
     @State var keyboardHeight: CGFloat = 0
+    @State var currentPage: Int = 0
+    
     let words = ["apple", "pear", "cup", "mask", "mouse"]
+    
     var body: some View {
         VStack {
-            TabView {
-                ForEach(words, id: \.self) { word in
-                    Text(word)
+            TabView(selection: $currentPage) {
+                ForEach(0..<words.count, id: \.self) { word in
+                    Text(words[word])
                         .fontWeight(.bold)
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                         .font(.largeTitle)
                         .background(Color("background"))
+                        .tag(word)
                 }
             }
             .frame(height: 450)
-            .tabViewStyle(.page(indexDisplayMode: .always))
+            .tabViewStyle(.page(indexDisplayMode: .never))
+            .unredacted()
             
             Spacer()
             
-            CustomTextField(placeHolder: "정답을 입력해주세요")
+            CustomTextField(currentPage: $currentPage, length: words.count, placeHolder: "정답을 입력해주세요")
         }
         .navigationTitle("오늘의 퀴즈")
     }
@@ -37,3 +43,4 @@ struct Test_Previews: PreviewProvider {
         Test()
     }
 }
+

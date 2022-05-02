@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TestTabView: View {
+    @State var move = false
     let tests = ["수능 단어", "모의 토익 단어", "수능 특강"]
     
     var body: some View {
@@ -20,7 +21,7 @@ struct TestTabView: View {
             ZStack {
                 VStack{
                     ForEach(tests, id: \.self) { test in
-                        NavigationLink(destination: Test()) {
+                        NavigationLink(destination: TestToResultView()) {
                             ZStack(alignment: .leading) {
                                 HorizontalButton()
                                 Text(test)

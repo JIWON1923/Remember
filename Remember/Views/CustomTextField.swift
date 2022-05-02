@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct CustomTextField: View {
+    
+    @EnvironmentObject var appState: AppState
     @State var inputText = ""
     @State var keyboardHeight: CGFloat = 0
+    @Binding var currentPage: Int
+    
+    let length: Int
     let placeHolder: String
     var body: some View {
         ZStack {
@@ -22,13 +27,12 @@ struct CustomTextField: View {
                     .padding(10)
                     .background(Color("background"))
                     .background(
-                            Capsule()
-                                .background(Color.blue)
-                                .clipped()
-                        )
-                        .clipShape(Capsule())
+                        Capsule()
+                            .background(Color.blue)
+                            .clipped()
+                    )
+                    .clipShape(Capsule())
                     .lineLimit(1)
-                    
                 ZStack {
                     Circle()
                         .fill(Color("point"))
@@ -36,6 +40,15 @@ struct CustomTextField: View {
                     Image(systemName: "checkmark")
                         .font(.system(size: 20).weight(.bold))
                         .foregroundColor(.white)
+                }
+                .onTapGesture {
+                    
+                    inputText = ""
+                    if currentPage < length - 1 {
+                        currentPage += 1
+                    } else {
+                        appState.hasOnboarded = true
+                    }
                 }
                 Spacer()
             }
@@ -45,7 +58,7 @@ struct CustomTextField: View {
         .onAppear() {
             NotificationCenter.default.addObserver(forName: UIResponder.keyboardDidShowNotification, object: nil, queue: .main) { (data) in
                 let h = data.userInfo![UIResponder.keyboardFrameEndUserInfoKey]
-                    as! NSValue
+                as! NSValue
                 self.keyboardHeight = h.cgRectValue.height - 240
             }
             
@@ -58,6 +71,6 @@ struct CustomTextField: View {
 
 struct CustomTextField_Previews: PreviewProvider {
     static var previews: some View {
-        CustomTextField(placeHolder: "정답을 입력하세요")
+        CustomTextField(currentPage: .constant(0), length: 3, placeHolder: "정답입력")
     }
 }
