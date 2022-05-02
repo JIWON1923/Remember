@@ -9,24 +9,30 @@ import SwiftUI
 
 struct TestTabView: View {
     @State var move = false
-    let tests = ["수능 단어", "모의 토익 단어", "수능 특강"]
+    let tests = ["수능 단어", "모의 토익 단어", "수능 특강", "ss"]
     
     var body: some View {
-        VStack(alignment: .leading) {
+        ZStack {
+            Rectangle()
+                .fill(Color.white)
+                .frame(height: CGFloat(tests.count * 50) + 100)
             
-            Text ("오늘의 퀴즈")
-                .fontWeight(.bold)
-                .padding()
-            
-            ZStack {
-                VStack{
-                    ForEach(tests, id: \.self) { test in
-                        NavigationLink(destination: TestToResultView()) {
-                            ZStack(alignment: .leading) {
-                                HorizontalButton()
-                                Text(test)
-                                    .padding()
-                            }
+            VStack(alignment: .leading) {
+                
+                Text ("오늘의 퀴즈")
+                    .fontWeight(.bold)
+                
+                ZStack {
+                    VStack{
+                        ForEach(tests, id: \.self) { test in
+                            NavigationLink(destination: TestToResultView()) {
+                                ZStack(alignment: .leading) {
+                                    HorizontalButton()
+                                    Text(test)
+                                        .padding()
+                                        
+                                }
+                            }.buttonStyle(PlainButtonStyle())
                         }
                     }
                 }

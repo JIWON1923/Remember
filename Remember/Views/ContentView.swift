@@ -32,12 +32,12 @@ struct ContentView: View {
                     Text("메인")
                 }.tag("리멤버")
             
-            TestTabView()
-                .tabItem {
-                    Image(systemName: "pencil")
-                    Text("시험보기")
-                }.tag("시험보기")
-            
+//            TestTabView()
+//                .tabItem {
+//                    Image(systemName: "pencil")
+//                    Text("시험보기")
+//                }.tag("시험보기")
+//
             CreateVocabulary()
                 .tabItem {
                     Image(systemName: "plus.circle")
@@ -49,12 +49,12 @@ struct ContentView: View {
                     Image(systemName: "note.text")
                     Text("단어장 보기")
                 }.tag("단어장 보기")
-            
-            MyPageTabView()
-                .tabItem {
-                    Image(systemName: "person")
-                    Text("마이페이지")
-                }.tag("마이페이지")
+//            
+//            MyPageTabView()
+//                .tabItem {
+//                    Image(systemName: "person")
+//                    Text("마이페이지")
+//                }.tag("마이페이지")
             
         }
         .accentColor(Color("point"))

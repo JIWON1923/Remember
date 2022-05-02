@@ -16,6 +16,7 @@ struct MainTabView: View {
                     .ignoresSafeArea() // 배경색 깔기
                 
                 VStack {
+                    TestTabView() // 오늘의 시험
                     TodayWords() // 오늘의 단어
                     MemorizationStatus() // 암기 현황
                     Recommend()
