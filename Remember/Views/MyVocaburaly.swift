@@ -9,30 +9,50 @@ import SwiftUI
 
 struct MyVocaburaly: View {
     let vocaName: String
-    let data = Array(1...100).map { "목록 \($0)" }
-    let columns = [ GridItem(.flexible()), GridItem(.flexible()) ]
-    
+    let word = ["aaa", "Bbb", "Ccc", "Ddd", "aa","aaa", "Bbb", "Ccc", "Ddd", "aa","aaa", "Bbb", "Ccc", "Ddd", "aa"]
+    let meaning = ["1", "2", "3", "4", "5","aaa", "Bbb", "Ccc", "Ddd", "aa","aaa", "Bbb", "Ccc", "Ddd", "aa"]
     var body: some View {
-        
-        ZStack {
-            Rectangle()
-                .fill(Color("background"))
-                .frame(width: 350, height: 600)
-            
-            VStack(alignment: .leading) {
-                Text(vocaName)
-                    .fontWeight(.bold)
-                    .padding()
+        VStack {
+            ZStack {
+                Rectangle()
+                    .fill(Color("voca"))
+                    .frame(width: 350, height: 700)
+                    .cornerRadius(30)
                 
-                ScrollView {
-                    LazyVGrid(columns: columns, spacing: 20) {
-                        ForEach(data, id: \.self) { i in
-                            Text(i)
+                VStack(alignment: .leading, spacing: 10) {
+                    
+                    HStack(alignment: .center) {
+                        Text("word").padding(.leading, 30)
+                        Spacer()
+                        Text("meaning")
+                    }
+                    .frame(width: 300)
+                    Divider()
+                    
+                    ScrollView(showsIndicators: false) {
+                        
+                        ForEach(0..<word.count, id: \.self) { index in
+                            HStack(spacing: 10) {
+                                Text(word[index])
+                                    .frame(width: 150)
+                                Spacer()
+                                Divider()
+                                Text(meaning[index])
+                                    .frame(width: 150)
+                            }
+                            .frame(width: 300, height:50)
+                            
                         }
                     }
-                }.frame(width: 350, height: 550)
+                    .frame(height: 600)
+                    
+                }
+                .frame(width: 300)
             }
+            .padding()
         }
+        
+        .navigationTitle(vocaName)
     }
 }
 
