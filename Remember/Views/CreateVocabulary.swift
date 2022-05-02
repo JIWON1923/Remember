@@ -23,40 +23,68 @@ struct note: View {
 
 struct CreateVocabulary: View {
     @State var vocabularyName = ""
-    let data = Array(1...15).map { "목록 \($0)" }
-    let columns = [ GridItem(.flexible()), GridItem(.flexible()) ]
+    @State var word = [String](repeating: "", count: 20)
+    @State var meaning = [String](repeating: "", count: 20)
     
     var body: some View {
         VStack {
-        ZStack {
-            Color("background")
-                .frame(width: 350, height: 600)
-                .cornerRadius(10)
-            
-            VStack(alignment: .leading) {
-                TextField("단어장 이름", text: $vocabularyName)
-                    .frame(width: 300)
-                
-                
-                ScrollView {
-                    LazyVGrid(columns: columns, spacing: 20) {
-                        ForEach(0 ..< 16) { i in
-                            note()
+            ZStack {
+                Rectangle()
+                    .fill(Color("voca"))
+                    .frame(width: 350, height: 550)
+                    .cornerRadius(30)
+                VStack (alignment: .leading, spacing: 10) {
+                    TextField("Vocaburaly Name", text: $vocabularyName)
+                        .frame(width: 300, height: 40)
+                        .padding(.leading, 20)
+                    Divider()
+                        .frame(width: 350)
+                    
+                    HStack(alignment: .center) {
+                        Text("word").padding(.leading, 30)
+                        Spacer()
+                        Text("meaning")
+                    }.frame(width: 300)
+                    Divider()
+                    ScrollView {
+                        ForEach(0..<20, id: \.self) { index in
+                            VocaburalyColumn(word: $word[index], meaning: $meaning[index])
                         }
+                        .frame(width: 350)
                     }
+                    .frame(height: 400)
                 }
-                .frame(width: 350, height: 550)
-            }
-        }
+            }.padding()
+            
             RoundedButton(buttonText: "등록하기")
         }
         
+        
+    }
+}
+
+struct VocaburalyColumn: View {
+    @Binding var word: String
+    @Binding var meaning: String
+    var body: some View {
+        VStack {
+            HStack(alignment: .firstTextBaseline, spacing: 10) {
+                TextField("", text: $word)
+                Divider()
+                Spacer()
+                TextField("", text: $meaning)
+            }
+            .frame(width: 300, height:50)
+            Divider()
+                .frame(width: 350)
+        }
     }
 }
 
 struct CreateVocabulary_Previews: PreviewProvider {
     static var previews: some View {
         CreateVocabulary()
-        //note()
     }
 }
+
+
