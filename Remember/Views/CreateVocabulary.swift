@@ -7,24 +7,13 @@
 
 import SwiftUI
 
-struct note: View {
-    @State var inputText = ""
-    var body: some View {
-        ZStack {
-        Rectangle()
-            .fill(.white)
-            .cornerRadius(10)
-            .frame(width: 160, height: 50)
-            TextField("입력해주세요", text: $inputText)
-                .frame(width: 150)
-        }
-    }
-}
-
 struct CreateVocabulary: View {
+    
+    @State var pressButton: Bool = false
     @State var vocabularyName = ""
     @State var word = [String](repeating: "", count: 20)
     @State var meaning = [String](repeating: "", count: 20)
+    @State var showingAlert = false
     
     var body: some View {
         VStack {
@@ -57,8 +46,15 @@ struct CreateVocabulary: View {
             }.padding()
             
             RoundedButton(buttonText: "등록하기")
+                .onTapGesture {
+                    self.showingAlert = true
+                    word = [String](repeating: "", count: 20)
+                    meaning = [String](repeating: "", count: 20)
+                }
+                .alert(isPresented: $showingAlert) {
+                    Alert(title: Text("저장되었습니다."))
+                }
         }
-        
         
     }
 }
