@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CustomTextField: View {
     @State var inputText = ""
+    @State var keyboardHeight: CGFloat = 0
     let placeHolder: String
     var body: some View {
         ZStack {
@@ -39,6 +40,18 @@ struct CustomTextField: View {
                 Spacer()
             }
             .padding()
+        }
+        .padding(.bottom, self.keyboardHeight)
+        .onAppear() {
+            NotificationCenter.default.addObserver(forName: UIResponder.keyboardDidShowNotification, object: nil, queue: .main) { (data) in
+                let h = data.userInfo![UIResponder.keyboardFrameEndUserInfoKey]
+                    as! NSValue
+                self.keyboardHeight = h.cgRectValue.height - 240
+            }
+            
+            NotificationCenter.default.addObserver(forName: UIResponder.keyboardDidHideNotification, object: nil, queue: .main) { (data) in
+                self.keyboardHeight = 0
+            }
         }
     }
 }
