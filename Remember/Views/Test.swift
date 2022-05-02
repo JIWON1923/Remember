@@ -25,6 +25,12 @@ struct Test: View {
                         .background(Color("background"))
                         .tag(word)
                 }
+                Button(action: {
+                }) {
+                    NavigationLink(destination: TestResult()) {
+                        Text("제출하기")
+                    }
+                } .tag(words.count)
             }
             .frame(height: 450)
             .tabViewStyle(.page(indexDisplayMode: .never))

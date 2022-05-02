@@ -9,7 +9,6 @@ import SwiftUI
 
 struct CustomTextField: View {
     
-    @EnvironmentObject var appState: AppState
     @State var inputText = ""
     @State var keyboardHeight: CGFloat = 0
     @Binding var currentPage: Int
@@ -42,12 +41,9 @@ struct CustomTextField: View {
                         .foregroundColor(.white)
                 }
                 .onTapGesture {
-                    
                     inputText = ""
-                    if currentPage < length - 1 {
+                    if currentPage < length  {
                         currentPage += 1
-                    } else {
-                        appState.hasOnboarded = true
                     }
                 }
                 Spacer()
