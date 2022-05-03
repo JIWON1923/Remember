@@ -76,6 +76,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		87176B702821B97D00D75C76 /* FirstTab */ = {
+			isa = PBXGroup;
+			children = (
+				87BCF0D4281C049600138163 /* MainTabView.swift */,
+				87BCF0D7281C0B1900138163 /* TodayWords.swift */,
+				87BCF0D9281C0DD000138163 /* MemorizationStatus.swift */,
+				87BCF0DD281C1CFD00138163 /* Recommend.swift */,
+				87BCF0DF281C355100138163 /* TestTabView.swift */,
+				87BCF0E1281C397A00138163 /* Test.swift */,
+				877EB42B28203E7F00946111 /* TestResult.swift */,
+				87BCF0E3281C3ABE00138163 /* CustomTextField.swift */,
+			);
+			path = FirstTab;
+			sourceTree = "<group>";
+		};
+		87176B712821B9AC00D75C76 /* SecondTab */ = {
+			isa = PBXGroup;
+			children = (
+				87BCF0E7281D05B200138163 /* CreateVocabulary.swift */,
+			);
+			path = SecondTab;
+			sourceTree = "<group>";
+		};
+		87176B722821B9D200D75C76 /* ThirdTab */ = {
+			isa = PBXGroup;
+			children = (
+				87BCF0EB281D14C300138163 /* MyVocabularyTabView.swift */,
+				87BCF0ED281D155900138163 /* MyVocaburaly.swift */,
+			);
+			path = ThirdTab;
+			sourceTree = "<group>";
+		};
+		87176B732821BA1300D75C76 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				87BCF0E9281D0E7500138163 /* RoundedButton.swift */,
+				87AED174281BDBDC00CF06FF /* VerticalButton.swift */,
+				87AED172281BBCC900CF06FF /* HorizontalButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		877EB4422821209F00946111 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,23 +168,12 @@
 		87C096C3281BF58A008A05E3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				87BCF0D4281C049600138163 /* MainTabView.swift */,
-				87BCF0D7281C0B1900138163 /* TodayWords.swift */,
-				87BCF0D9281C0DD000138163 /* MemorizationStatus.swift */,
-				87BCF0DD281C1CFD00138163 /* Recommend.swift */,
-				87BCF0DF281C355100138163 /* TestTabView.swift */,
-				87BCF0E1281C397A00138163 /* Test.swift */,
-				877EB42B28203E7F00946111 /* TestResult.swift */,
-				87BCF0E9281D0E7500138163 /* RoundedButton.swift */,
-				87AED172281BBCC900CF06FF /* HorizontalButton.swift */,
-				87AED174281BDBDC00CF06FF /* VerticalButton.swift */,
-				87BCF0E3281C3ABE00138163 /* CustomTextField.swift */,
-				87BCF0ED281D155900138163 /* MyVocaburaly.swift */,
-				87BCF0E7281D05B200138163 /* CreateVocabulary.swift */,
-				87AED166281BABC000CF06FF /* ContentView.swift */,
-				87BCF0EB281D14C300138163 /* MyVocabularyTabView.swift */,
+				87176B712821B9AC00D75C76 /* SecondTab */,
+				87176B722821B9D200D75C76 /* ThirdTab */,
+				87176B732821BA1300D75C76 /* Components */,
+				87176B702821B97D00D75C76 /* FirstTab */,
 				87BCF0EF281D18F000138163 /* MyPageTabView.swift */,
-				877EB427281E57B500946111 /* NavigationBar.swift */,
+				87AED166281BABC000CF06FF /* ContentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -153,6 +184,7 @@
 				87AED176281BDD5F00CF06FF /* ColorExtension.swift */,
 				877EB429282009E600946111 /* ViewFlows.swift */,
 				87176B6E2821B2ED00D75C76 /* NavigationUtil.swift */,
+				877EB427281E57B500946111 /* NavigationBar.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
