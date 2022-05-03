@@ -38,7 +38,7 @@ struct ContentView: View {
 //                    Text("시험보기")
 //                }.tag("시험보기")
 //
-            CreateVocabulary()
+            CreateVocabulary(coreDM: CoreDataManager())
                 .tabItem {
                     Image(systemName: "plus.circle")
                     Text("단어장 만들기")

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CreateVocabulary: View {
     
+    let coreDM: CoreDataManager
     @State var pressButton: Bool = false
     @State var vocabularyName = ""
     @State var word = [String](repeating: "", count: 20)
@@ -48,14 +49,28 @@ struct CreateVocabulary: View {
             RoundedButton(buttonText: "등록하기")
                 .onTapGesture {
                     self.showingAlert = true
+                    saveInfo(w: word, m: meaning, title: vocabularyName)
                     word = [String](repeating: "", count: 20)
                     meaning = [String](repeating: "", count: 20)
+                    vocabularyName = ""
                 }
                 .alert(isPresented: $showingAlert) {
                     Alert(title: Text("저장되었습니다."))
                 }
         }
         
+    }
+    
+    func saveInfo(w: [String], m: [String], title: String) {
+        var word = [String]()
+        var meaning = [String]()
+        for i in 0 ..< w.count {
+            if w[i] == "" || m[i] == "" { continue }
+            word.append(w[i])
+            meaning.append(m[i])
+        }
+        let isCorrect = [Int](repeating: 0, count: word.count)
+        coreDM.saveVoca(title: title, words: word, meanings: meaning, isCorrect: isCorrect)
     }
 }
 
@@ -79,7 +94,7 @@ struct VocaburalyColumn: View {
 
 struct CreateVocabulary_Previews: PreviewProvider {
     static var previews: some View {
-        CreateVocabulary()
+        CreateVocabulary(coreDM: CoreDataManager())
     }
 }
 

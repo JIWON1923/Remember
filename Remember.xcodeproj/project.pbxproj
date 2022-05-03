@@ -11,6 +11,8 @@
 		877EB428281E57B500946111 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877EB427281E57B500946111 /* NavigationBar.swift */; };
 		877EB42A282009E600946111 /* ViewFlows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877EB429282009E600946111 /* ViewFlows.swift */; };
 		877EB42C28203E7F00946111 /* TestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877EB42B28203E7F00946111 /* TestResult.swift */; };
+		877EB44128211FC500946111 /* Remember.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 877EB43F28211FC500946111 /* Remember.xcdatamodeld */; };
+		877EB444282120B300946111 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877EB443282120B300946111 /* CoreDataManager.swift */; };
 		87AED165281BABC000CF06FF /* RememberApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AED164281BABC000CF06FF /* RememberApp.swift */; };
 		87AED167281BABC000CF06FF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AED166281BABC000CF06FF /* ContentView.swift */; };
 		87AED169281BABC200CF06FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87AED168281BABC200CF06FF /* Assets.xcassets */; };
@@ -37,6 +39,8 @@
 		877EB427281E57B500946111 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		877EB429282009E600946111 /* ViewFlows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFlows.swift; sourceTree = "<group>"; };
 		877EB42B28203E7F00946111 /* TestResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestResult.swift; sourceTree = "<group>"; };
+		877EB44028211FC500946111 /* Remember.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Remember.xcdatamodel; sourceTree = "<group>"; };
+		877EB443282120B300946111 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		87AED161281BABC000CF06FF /* Remember.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Remember.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87AED164281BABC000CF06FF /* RememberApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RememberApp.swift; sourceTree = "<group>"; };
 		87AED166281BABC000CF06FF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -70,9 +74,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		877EB4422821209F00946111 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				877EB443282120B300946111 /* CoreDataManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		87AED158281BABC000CF06FF = {
 			isa = PBXGroup;
 			children = (
+				877EB4422821209F00946111 /* Managers */,
+				877EB43F28211FC500946111 /* Remember.xcdatamodeld */,
 				87AED163281BABC000CF06FF /* Remember */,
 				87AED162281BABC000CF06FF /* Products */,
 			);
@@ -116,9 +130,9 @@
 				87BCF0E3281C3ABE00138163 /* CustomTextField.swift */,
 				87BCF0D9281C0DD000138163 /* MemorizationStatus.swift */,
 				87BCF0DD281C1CFD00138163 /* Recommend.swift */,
-				87BCF0E1281C397A00138163 /* Test.swift */,
 				87BCF0D7281C0B1900138163 /* TodayWords.swift */,
 				87BCF0D4281C049600138163 /* MainTabView.swift */,
+				87BCF0E1281C397A00138163 /* Test.swift */,
 				87BCF0DF281C355100138163 /* TestTabView.swift */,
 				87BCF0E7281D05B200138163 /* CreateVocabulary.swift */,
 				87AED166281BABC000CF06FF /* ContentView.swift */,
@@ -221,6 +235,7 @@
 				87BCF0E4281C3ABE00138163 /* CustomTextField.swift in Sources */,
 				87BCF0DE281C1CFD00138163 /* Recommend.swift in Sources */,
 				87AED175281BDBDC00CF06FF /* VerticalButton.swift in Sources */,
+				877EB444282120B300946111 /* CoreDataManager.swift in Sources */,
 				877EB42C28203E7F00946111 /* TestResult.swift in Sources */,
 				87BCF0E2281C397A00138163 /* Test.swift in Sources */,
 				87BCF0D8281C0B1900138163 /* TodayWords.swift in Sources */,
@@ -228,6 +243,7 @@
 				87BCF0EE281D155900138163 /* MyVocaburaly.swift in Sources */,
 				87BCF0DA281C0DD000138163 /* MemorizationStatus.swift in Sources */,
 				877EB42A282009E600946111 /* ViewFlows.swift in Sources */,
+				877EB44128211FC500946111 /* Remember.xcdatamodeld in Sources */,
 				87BCF0EA281D0E7500138163 /* RoundedButton.swift in Sources */,
 				87AED165281BABC000CF06FF /* RememberApp.swift in Sources */,
 				87AED177281BDD5F00CF06FF /* ColorExtension.swift in Sources */,
@@ -433,6 +449,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		877EB43F28211FC500946111 /* Remember.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				877EB44028211FC500946111 /* Remember.xcdatamodel */,
+			);
+			currentVersion = 877EB44028211FC500946111 /* Remember.xcdatamodel */;
+			path = Remember.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 87AED159281BABC000CF06FF /* Project object */;
 }

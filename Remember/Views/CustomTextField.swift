@@ -12,17 +12,20 @@ struct CustomTextField: View {
     @State var inputText = ""
     @State var keyboardHeight: CGFloat = 0
     @Binding var currentPage: Int
+    @Binding var needRefresh: Bool
     
-    let length: Int
-    let placeHolder: String
+    let voca: Voca
+    let coreDM = CoreDataManager()
     var body: some View {
+        let meanings = voca.meanings!
+        
         ZStack {
             Rectangle()
                 .fill(Color.white)
                 .frame(height: 50)
             HStack {
                 Spacer()
-                TextField(placeHolder, text: $inputText)
+                TextField("정답을 입력해주세요", text: $inputText)
                     .padding(10)
                     .background(Color("background"))
                     .background(
@@ -41,10 +44,15 @@ struct CustomTextField: View {
                         .foregroundColor(.white)
                 }
                 .onTapGesture {
-                    inputText = ""
-                    if currentPage < length  {
+                    if currentPage < meanings.count {
+                        isCorrected(index: currentPage, meaning: meanings[currentPage], input: inputText)
+                        
+                        
                         currentPage += 1
+                    } else {
+                        needRefresh.toggle()
                     }
+                    inputText = ""
                 }
                 Spacer()
             }
@@ -63,10 +71,20 @@ struct CustomTextField: View {
             }
         }
     }
+    func isCorrected(index: Int, meaning: String, input: String) {
+        if meaning == input {
+            var c = voca.isCorrect
+            c![index] += 1
+            
+            voca.isCorrect = c
+            coreDM.updateVoca()
+        }
+    }
 }
 
 struct CustomTextField_Previews: PreviewProvider {
     static var previews: some View {
-        CustomTextField(currentPage: .constant(0), length: 3, placeHolder: "정답입력")
+        CustomTextField(currentPage: .constant(0),
+                        needRefresh: .constant(false), voca: Voca())
     }
 }

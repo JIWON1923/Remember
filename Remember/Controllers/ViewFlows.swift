@@ -15,19 +15,19 @@ class AppState: ObservableObject {
     }
 }
 
-struct TestToResultView: View {
-    @StateObject var appState = AppState(hasOnboarded: false)
-    var body: some View {
-        if appState.hasOnboarded {
-            MainTabView()
-                .environmentObject(appState)
-        } else {
-            Test()
-                .environmentObject(appState)
-            
-        }
-    }
-}
+//struct TestToResultView: View {
+//    @StateObject var appState = AppState(hasOnboarded: false)
+//    var body: some View {
+//        if appState.hasOnboarded {
+//            MainTabView()
+//                .environmentObject(appState)
+//        } else {
+//            Test()
+//                .environmentObject(appState)
+//            
+//        }
+//    }
+//}
 
 //struct CreateVocaToMain: View {
 //    @StateObject var appState = AppState(hasOnboarded: false)

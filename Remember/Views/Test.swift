@@ -8,29 +8,33 @@
 import SwiftUI
 
 struct Test: View {
-
+    @Binding var rootIsActive: Bool
     @State var keyboardHeight: CGFloat = 0
     @State var currentPage: Int = 0
+    @State var needRefresh: Bool = false
     
-    let words = ["apple", "pear", "cup", "mask", "mouse"]
+    let voca: Voca
     
     var body: some View {
+        
+        let words = voca.words
+        
         VStack {
             TabView(selection: $currentPage) {
-                ForEach(0..<words.count, id: \.self) { word in
-                    Text(words[word])
+                ForEach(0..<words!.count, id: \.self) { index in
+                    Text(words![index])
                         .fontWeight(.bold)
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                         .font(.largeTitle)
                         .background(Color("background"))
-                        .tag(word)
+                        .tag(index)
                 }
                 Button(action: {
                 }) {
-                    NavigationLink(destination: TestResult()) {
+                    NavigationLink(destination: TestResult(shouldPopToRootView: $rootIsActive, testResult: voca.isCorrect!)) {
                         Text("제출하기")
                     }
-                } .tag(words.count)
+                } .tag(words!.count)
             }
             .frame(height: 450)
             .tabViewStyle(.page(indexDisplayMode: .never))
@@ -38,15 +42,16 @@ struct Test: View {
             
             Spacer()
             
-            CustomTextField(currentPage: $currentPage, length: words.count, placeHolder: "정답을 입력해주세요")
+            CustomTextField(currentPage: $currentPage, needRefresh: $needRefresh, voca: voca)
         }
         .navigationTitle("오늘의 퀴즈")
+        .onAppear()
     }
 }
 
 struct Test_Previews: PreviewProvider {
     static var previews: some View {
-        Test()
+        Test(rootIsActive: .constant(false), voca: Voca())
     }
 }
 
