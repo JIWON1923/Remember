@@ -8,20 +8,25 @@
 import SwiftUI
 
 struct MyVocabularyTabView: View {
-    let vocaBooks = ["hihi", "토마토", "어쩌고", "저쩌고"]
+    
+    @State private var vocas: [Voca] = [Voca]()
+    let coreDM: CoreDataManager
+    
     var body: some View {
-        List {
-            ForEach(0..<vocaBooks.count, id: \.self) { i in
-                NavigationLink(destination: MyVocaburaly(vocaName: vocaBooks[i])) {
-                    Text(vocaBooks[i])
+        VStack {
+            List {
+                ForEach(vocas, id: \.self) { voca in
+                    NavigationLink(destination: MyVocaburaly(voca: voca)) {
+                        Text(voca.title ?? "")
+                    }
                 }
             }
-        }
+        }.onAppear(perform: { vocas = coreDM.getAllVoca() })
     }
 }
 
 struct MyVocabularyTabView_Previews: PreviewProvider {
     static var previews: some View {
-        MyVocabularyTabView()
+        MyVocabularyTabView(coreDM: CoreDataManager())
     }
 }

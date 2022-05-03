@@ -13,7 +13,7 @@ struct CustomTextField: View {
     @State var keyboardHeight: CGFloat = 0
     @Binding var currentPage: Int
     @Binding var needRefresh: Bool
-    
+    @Binding var testResult: [String]
     let voca: Voca
     let coreDM = CoreDataManager()
     var body: some View {
@@ -84,7 +84,6 @@ struct CustomTextField: View {
 
 struct CustomTextField_Previews: PreviewProvider {
     static var previews: some View {
-        CustomTextField(currentPage: .constant(0),
-                        needRefresh: .constant(false), voca: Voca())
+        CustomTextField(currentPage: .constant(0), needRefresh: .constant(false), testResult: .constant(["1"]), voca: Voca())
     }
 }

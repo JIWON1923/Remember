@@ -12,8 +12,9 @@ struct Test: View {
     @State var keyboardHeight: CGFloat = 0
     @State var currentPage: Int = 0
     @State var needRefresh: Bool = false
+    @State var testResult = [String](repeating: "", count: 20)
     
-    let voca: Voca
+    var voca: Voca
     
     var body: some View {
         
@@ -31,7 +32,7 @@ struct Test: View {
                 }
                 Button(action: {
                 }) {
-                    NavigationLink(destination: TestResult(shouldPopToRootView: $rootIsActive, testResult: voca.isCorrect!)) {
+                    NavigationLink(destination: TestResult(shouldPopToRootView: $rootIsActive, testResult: testResult, voca: voca)) {
                         Text("제출하기")
                     }
                 } .tag(words!.count)
@@ -42,10 +43,10 @@ struct Test: View {
             
             Spacer()
             
-            CustomTextField(currentPage: $currentPage, needRefresh: $needRefresh, voca: voca)
+            CustomTextField(currentPage: $currentPage, needRefresh: $needRefresh, testResult: $testResult, voca: voca)
         }
         .navigationTitle("오늘의 퀴즈")
-        .onAppear()
+        //.onAppear()
     }
 }
 

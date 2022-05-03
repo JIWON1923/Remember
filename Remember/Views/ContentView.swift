@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
+    let coreDM = CoreDataManager()
     @State var navigationTitle = "리멤버"
     
     var body: some View {
@@ -38,13 +39,13 @@ struct ContentView: View {
 //                    Text("시험보기")
 //                }.tag("시험보기")
 //
-            CreateVocabulary(coreDM: CoreDataManager())
+            CreateVocabulary(coreDM: coreDM)
                 .tabItem {
                     Image(systemName: "plus.circle")
                     Text("단어장 만들기")
                 }.tag("단어장 만들기")
             
-            MyVocabularyTabView()
+            MyVocabularyTabView(coreDM: coreDM)
                 .tabItem {
                     Image(systemName: "note.text")
                     Text("단어장 보기")
