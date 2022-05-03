@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct MainTabView: View {
+    
     var body: some View {
         
         ScrollView {
+            
             ZStack {
                 Color("background")
                     .ignoresSafeArea() // 배경색 깔기

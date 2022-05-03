@@ -8,13 +8,17 @@
 import SwiftUI
 
 struct TestResult: View {
+    
     @Binding var shouldPopToRootView : Bool
+    
     @State var testResult: [String]
     @State var voca: Voca
+    
     var body: some View {
         
         VStack {
             MyVocaburaly(voca: voca)
+            
             RoundedButton(buttonText: "돌아가기")
                 .onTapGesture {
                     self.shouldPopToRootView = false

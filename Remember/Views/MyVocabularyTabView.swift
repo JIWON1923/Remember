@@ -10,18 +10,21 @@ import SwiftUI
 struct MyVocabularyTabView: View {
     
     @State private var vocas: [Voca] = [Voca]()
+    
     let coreDM: CoreDataManager
     
     var body: some View {
         VStack {
             List {
                 ForEach(vocas, id: \.self) { voca in
+                    
                     NavigationLink(destination: MyVocaburaly(voca: voca)) {
                         Text(voca.title ?? "")
                     }
                 }
             }
-        }.onAppear(perform: { vocas = coreDM.getAllVoca() })
+        }
+        .onAppear(perform: { vocas = coreDM.getAllVoca() })
     }
 }
 

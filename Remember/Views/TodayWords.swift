@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct TodayWords: View {
+    
     let words = ["tomato", "tiger", "t-shirts"]
+    
     var body: some View {
         
         ZStack {
@@ -19,7 +21,6 @@ struct TodayWords: View {
             VStack(alignment: .leading) {
                 
                 Text("오늘의 단어")
-                    
                 
                 ForEach(words, id:  \.self) { word in
                     

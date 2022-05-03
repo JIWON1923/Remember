@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct VerticalButton: View {
+    
     var body: some View {
         
         Rectangle()

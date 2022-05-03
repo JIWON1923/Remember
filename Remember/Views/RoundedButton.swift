@@ -8,17 +8,20 @@
 import SwiftUI
 
 struct RoundedButton: View {
+    
     let buttonText: String
+    
     var body: some View {
         ZStack{
-        Rectangle()
-            .fill(Color("point"))
-            .frame(width: 150, height: 40)
-            .cornerRadius(20)
-        Text(buttonText)
+            Rectangle()
+                .fill(Color("point"))
+                .frame(width: 150, height: 40)
+                .cornerRadius(20)
+            
+            Text(buttonText)
                 .fontWeight(.bold)
                 .foregroundColor(.white)
-                
+            
         }
     }
 }

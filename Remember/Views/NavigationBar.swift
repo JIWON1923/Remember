@@ -11,7 +11,9 @@ import UIKit
 struct NavigationBarColor: ViewModifier {
     
     init(backgroundColor: UIColor, tintColor: UIColor) {
+        
         let coloredAppearance = UINavigationBarAppearance()
+        
         coloredAppearance.configureWithOpaqueBackground()
         coloredAppearance.backgroundColor = backgroundColor
         coloredAppearance.titleTextAttributes = [.foregroundColor: tintColor]

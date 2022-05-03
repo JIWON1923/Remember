@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct MyPageTabView: View {
+    
     var body: some View {
+        
         VStack(alignment: .leading) {
+            
             Text("학습 현황")
                 .fontWeight(.bold)
             
