@@ -70,7 +70,7 @@ struct CreateVocabulary: View {
             meaning.append(m[i])
         }
         let isCorrect = [Int](repeating: 0, count: word.count)
-        coreDM.saveVoca(title: title, words: word, meanings: meaning, isCorrect: isCorrect)
+        coreDM.saveVoca(title: title, words: word, meanings: meaning)//, isCorrect: isCorrect)
     }
 }
 

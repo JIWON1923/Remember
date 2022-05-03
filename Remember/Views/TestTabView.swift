@@ -26,37 +26,25 @@ struct TestTabView: View {
                 
                 ZStack {
                     VStack {
-                        ForEach(0..<tests.count, id: \.self) {
-                            index in
-                            NavigationLink(destination: Test(rootIsActive: $isActive, voca: tests[index]), isActive: $isActive) {
-                                ZStack(alignment: .leading) {
-                                    HorizontalButton()
-                                    Text(tests[index].title ?? "nil")
-                                        .padding()
-                                }
-                            }
-                        }
                         // MARK : 질문
-//                        ForEach(tests, id: \.self) { test in
-//                            NavigationLink(
-//                                destination: Test(rootIsActive: $isActive,
-//                                                  voca: test),
-//                                isActive: self.$isActive) {
-//
-//                                    ZStack(alignment: .leading) {
-//                                        HorizontalButton()
-//                                        Text(test.title ?? "nil")
-//                                            .padding()
-//                                    }
-//                                }
-//                        }
-                    }
+                        ForEach(tests, id: \.self) { test in
+                            NavigationLink(
+                                destination: Test(rootIsActive: $isActive,
+                                                  voca: test)
+                                //, isActive: $isActive
+                            ) {
+                                    
+                                    ZStack(alignment: .leading) {
+                                        HorizontalButton()
+                                        Text(test.title ?? "")
+                                            .padding()
+                                    }
+                                }.isDetailLink(false)
+                        }
+                    }.onAppear(perform: { tests = coreDM.getAllVoca() })
                 }
             }
         }
-        .onAppear(perform: {
-            tests = coreDM.getAllVoca()
-        })
     }
 }
 

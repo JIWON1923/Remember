@@ -17,7 +17,8 @@ struct TestResult: View {
             MyVocaburaly(voca: voca)
             RoundedButton(buttonText: "돌아가기")
                 .onTapGesture {
-                    shouldPopToRootView = false
+                    self.shouldPopToRootView = false
+                    NavigationUtil.popToRootView()
                 }
         }
         

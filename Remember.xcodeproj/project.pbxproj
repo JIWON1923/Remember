@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		87176B6F2821B2ED00D75C76 /* NavigationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87176B6E2821B2ED00D75C76 /* NavigationUtil.swift */; };
 		877EB426281DAAF200946111 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 877EB425281DAAF200946111 /* LaunchScreen.storyboard */; };
 		877EB428281E57B500946111 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877EB427281E57B500946111 /* NavigationBar.swift */; };
 		877EB42A282009E600946111 /* ViewFlows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877EB429282009E600946111 /* ViewFlows.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		87176B6E2821B2ED00D75C76 /* NavigationUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationUtil.swift; sourceTree = "<group>"; };
 		877EB425281DAAF200946111 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		877EB427281E57B500946111 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		877EB429282009E600946111 /* ViewFlows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFlows.swift; sourceTree = "<group>"; };
@@ -124,23 +126,23 @@
 		87C096C3281BF58A008A05E3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				87BCF0D4281C049600138163 /* MainTabView.swift */,
+				87BCF0D7281C0B1900138163 /* TodayWords.swift */,
+				87BCF0D9281C0DD000138163 /* MemorizationStatus.swift */,
+				87BCF0DD281C1CFD00138163 /* Recommend.swift */,
+				87BCF0DF281C355100138163 /* TestTabView.swift */,
+				87BCF0E1281C397A00138163 /* Test.swift */,
+				877EB42B28203E7F00946111 /* TestResult.swift */,
 				87BCF0E9281D0E7500138163 /* RoundedButton.swift */,
 				87AED172281BBCC900CF06FF /* HorizontalButton.swift */,
 				87AED174281BDBDC00CF06FF /* VerticalButton.swift */,
 				87BCF0E3281C3ABE00138163 /* CustomTextField.swift */,
-				87BCF0D9281C0DD000138163 /* MemorizationStatus.swift */,
-				87BCF0DD281C1CFD00138163 /* Recommend.swift */,
-				87BCF0D7281C0B1900138163 /* TodayWords.swift */,
-				87BCF0D4281C049600138163 /* MainTabView.swift */,
-				87BCF0E1281C397A00138163 /* Test.swift */,
-				87BCF0DF281C355100138163 /* TestTabView.swift */,
 				87BCF0ED281D155900138163 /* MyVocaburaly.swift */,
 				87BCF0E7281D05B200138163 /* CreateVocabulary.swift */,
 				87AED166281BABC000CF06FF /* ContentView.swift */,
 				87BCF0EB281D14C300138163 /* MyVocabularyTabView.swift */,
 				87BCF0EF281D18F000138163 /* MyPageTabView.swift */,
 				877EB427281E57B500946111 /* NavigationBar.swift */,
-				877EB42B28203E7F00946111 /* TestResult.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -150,6 +152,7 @@
 			children = (
 				87AED176281BDD5F00CF06FF /* ColorExtension.swift */,
 				877EB429282009E600946111 /* ViewFlows.swift */,
+				87176B6E2821B2ED00D75C76 /* NavigationUtil.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 				87BCF0E2281C397A00138163 /* Test.swift in Sources */,
 				87BCF0D8281C0B1900138163 /* TodayWords.swift in Sources */,
 				87AED167281BABC000CF06FF /* ContentView.swift in Sources */,
+				87176B6F2821B2ED00D75C76 /* NavigationUtil.swift in Sources */,
 				87BCF0EE281D155900138163 /* MyVocaburaly.swift in Sources */,
 				87BCF0DA281C0DD000138163 /* MemorizationStatus.swift in Sources */,
 				877EB42A282009E600946111 /* ViewFlows.swift in Sources */,

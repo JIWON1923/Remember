@@ -17,7 +17,6 @@ struct Test: View {
     var voca: Voca
     
     var body: some View {
-        
         let words = voca.words
         
         VStack {
@@ -35,6 +34,8 @@ struct Test: View {
                     NavigationLink(destination: TestResult(shouldPopToRootView: $rootIsActive, testResult: testResult, voca: voca)) {
                         Text("제출하기")
                     }
+                    
+                    .isDetailLink(false)
                 } .tag(words!.count)
             }
             .frame(height: 450)

@@ -21,14 +21,15 @@ class CoreDataManager {
         })
     }
     
-    func saveVoca(title: String, words: [String], meanings: [String], isCorrect: [Int]) {
+    func saveVoca(title: String, words: [String], meanings: [String]) {
         
         let voca = Voca(context: persistentContainer.viewContext)
         voca.title = title
         voca.words = words
         voca.meanings = meanings
         voca.id = UUID()
-        voca.isCorrect = isCorrect
+        voca.date = Date()
+        //voca.isCorrect = isCorrect
         
         
         do {
@@ -41,6 +42,8 @@ class CoreDataManager {
 
     func getAllVoca() -> [Voca] {
         let fetchRequest: NSFetchRequest<Voca> = Voca.fetchRequest()
+        let sort = NSSortDescriptor(keyPath: \Voca.date, ascending: true)
+        fetchRequest.sortDescriptors = [sort]
         
         do {
             return try persistentContainer.viewContext.fetch(fetchRequest)
