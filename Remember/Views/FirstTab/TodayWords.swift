@@ -9,7 +9,9 @@ import SwiftUI
 
 struct TodayWords: View {
     
-    let words = ["tomato", "tiger", "t-shirts"]
+    let words = ["deplete","fatigue","diagnosis"]
+    let meanings = ["고갈시키다","피로","진단"]
+    @State var isTapped = [Bool](repeating: false, count: 3)
     
     var body: some View {
         
@@ -22,14 +24,25 @@ struct TodayWords: View {
                 
                 Text("오늘의 단어")
                 
-                ForEach(words, id:  \.self) { word in
+                ForEach(0 ..< words.count, id:  \.self) { i in
                     
-                    ZStack(alignment: .leading){
-                        HorizontalButton()
+                    ZStack{
                         
-                        Text(word)
-                            .fontWeight(.bold)
-                            .padding()
+                        HorizontalButton()
+                            .onTapGesture {
+                                isTapped[i].toggle()
+                            }
+                        
+                        if isTapped[i] {
+                            Text(meanings[i])
+                            
+                        } else {
+                            Text(words[i])
+                        }
+                        
+//                        Text(word)
+//                            .fontWeight(.bold)
+//                            .padding()
                     }
                 }
             }
