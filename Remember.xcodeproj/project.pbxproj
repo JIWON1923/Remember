@@ -41,7 +41,7 @@
 
 /* Begin PBXFileReference section */
 		87176B6E2821B2ED00D75C76 /* NavigationUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationUtil.swift; sourceTree = "<group>"; };
-		87176B742821C1CB00D75C76 /* example.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = example.json; path = Remember/example.json; sourceTree = SOURCE_ROOT; };
+		87176B742821C1CB00D75C76 /* example.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = example.json; path = Remember/example.json; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.json; };
 		87176B752821C93A00D75C76 /* JSONManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONManager.swift; sourceTree = "<group>"; };
 		87176B782821D73100D75C76 /* RecommendDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendDetail.swift; sourceTree = "<group>"; };
 		872F02A4282267730046A0C5 /* Vocabulary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vocabulary.swift; sourceTree = "<group>"; };
