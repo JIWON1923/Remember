@@ -1,0 +1,29 @@
+[
+    {
+        "id": 0,
+        "title": "투자",
+        "words": ["investment", "property", "bond", "outlook", "entrepreneur", "insight"],
+        "meanings": ["투자", "재산", "채권", "전망", "사업가", "통찰력"]
+    },
+
+    {
+        "id": 1,
+        "title": "환경",
+        "words": ["waste", "recycling", "deplete", "purify", "ecology"],
+        "meanings": ["쓰레기", "재활용", "고갈시키다", "정화시키다", "자연환경"]
+    },
+    
+    {
+        "id": 2,
+        "title": "건강",
+        "words": ["fatigue", "checkup", "symptom", "physician", "diagnosis"],
+        "meanings": ["피로", "건강 진단", "증상", "내과의사", "진단"]
+    },
+    
+    {
+        "id": 3,
+        "title": "교통",
+        "words": ["congestion", "alleviate", "divert", "fuel", "malfunction"],
+        "meanings": ["체증", "완화하다", "우회시키다", "연료", "오작동"]
+    }
+]

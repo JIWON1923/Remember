@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		87176B6F2821B2ED00D75C76 /* NavigationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87176B6E2821B2ED00D75C76 /* NavigationUtil.swift */; };
+		87176B762821C93A00D75C76 /* JSONManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87176B752821C93A00D75C76 /* JSONManager.swift */; };
+		87176B792821D73100D75C76 /* RecommendDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87176B782821D73100D75C76 /* RecommendDetail.swift */; };
+		87176B7A28223FA100D75C76 /* example.json in Resources */ = {isa = PBXBuildFile; fileRef = 87176B742821C1CB00D75C76 /* example.json */; };
 		877EB426281DAAF200946111 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 877EB425281DAAF200946111 /* LaunchScreen.storyboard */; };
 		877EB428281E57B500946111 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877EB427281E57B500946111 /* NavigationBar.swift */; };
 		877EB42A282009E600946111 /* ViewFlows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877EB429282009E600946111 /* ViewFlows.swift */; };
@@ -37,6 +40,9 @@
 
 /* Begin PBXFileReference section */
 		87176B6E2821B2ED00D75C76 /* NavigationUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationUtil.swift; sourceTree = "<group>"; };
+		87176B742821C1CB00D75C76 /* example.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = example.json; path = Remember/example.json; sourceTree = SOURCE_ROOT; };
+		87176B752821C93A00D75C76 /* JSONManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONManager.swift; sourceTree = "<group>"; };
+		87176B782821D73100D75C76 /* RecommendDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendDetail.swift; sourceTree = "<group>"; };
 		877EB425281DAAF200946111 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		877EB427281E57B500946111 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		877EB429282009E600946111 /* ViewFlows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFlows.swift; sourceTree = "<group>"; };
@@ -87,6 +93,7 @@
 				87BCF0E1281C397A00138163 /* Test.swift */,
 				877EB42B28203E7F00946111 /* TestResult.swift */,
 				87BCF0E3281C3ABE00138163 /* CustomTextField.swift */,
+				87176B782821D73100D75C76 /* RecommendDetail.swift */,
 			);
 			path = FirstTab;
 			sourceTree = "<group>";
@@ -150,6 +157,7 @@
 				87C096C5281BF5A2008A05E3 /* Controllers */,
 				87C096C3281BF58A008A05E3 /* Views */,
 				87AED164281BABC000CF06FF /* RememberApp.swift */,
+				87176B742821C1CB00D75C76 /* example.json */,
 				877EB425281DAAF200946111 /* LaunchScreen.storyboard */,
 				87AED168281BABC200CF06FF /* Assets.xcassets */,
 				87AED16A281BABC200CF06FF /* Preview Content */,
@@ -185,6 +193,7 @@
 				877EB429282009E600946111 /* ViewFlows.swift */,
 				87176B6E2821B2ED00D75C76 /* NavigationUtil.swift */,
 				877EB427281E57B500946111 /* NavigationBar.swift */,
+				87176B752821C93A00D75C76 /* JSONManager.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -247,6 +256,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87176B7A28223FA100D75C76 /* example.json in Resources */,
 				877EB426281DAAF200946111 /* LaunchScreen.storyboard in Resources */,
 				87AED16C281BABC200CF06FF /* Preview Assets.xcassets in Resources */,
 				87AED169281BABC200CF06FF /* Assets.xcassets in Resources */,
@@ -280,6 +290,8 @@
 				87BCF0DA281C0DD000138163 /* MemorizationStatus.swift in Sources */,
 				877EB42A282009E600946111 /* ViewFlows.swift in Sources */,
 				877EB44128211FC500946111 /* Remember.xcdatamodeld in Sources */,
+				87176B792821D73100D75C76 /* RecommendDetail.swift in Sources */,
+				87176B762821C93A00D75C76 /* JSONManager.swift in Sources */,
 				87BCF0EA281D0E7500138163 /* RoundedButton.swift in Sources */,
 				87AED165281BABC000CF06FF /* RememberApp.swift in Sources */,
 				87AED177281BDD5F00CF06FF /* ColorExtension.swift in Sources */,

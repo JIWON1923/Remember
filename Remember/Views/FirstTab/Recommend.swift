@@ -9,9 +9,11 @@ import SwiftUI
 
 struct Recommend: View {
     
+    private var recommendVoca: [RecommendVoca] = RecommendVoca.allVoca
+    
     var body: some View {
         
-        let bookNames = ["피노키오", "수능특강2", "백설공주", "카페"]
+        //let bookNames = ["피노키오", "수능특강2", "백설공주", "카페"]
         
         ZStack {
             Rectangle()
@@ -25,12 +27,14 @@ struct Recommend: View {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
                         
-                        ForEach(bookNames, id: \.self) { name in
-                            ZStack {
-                                
-                                VerticalButton()
-                                Text(name)
-                                    .fontWeight(.bold)
+                        ForEach(recommendVoca, id: \.id) { r in
+                            
+                            NavigationLink(destination: RecommendDetail(voca: r)) {
+                                ZStack {
+                                    VerticalButton()
+                                    Text(r.title)
+                                        .fontWeight(.bold)
+                                }
                             }
                             .padding(.leading, 15)
                             .padding(.bottom, 15)
@@ -42,6 +46,12 @@ struct Recommend: View {
             .padding()
         }
     }
+}
+
+struct RecommenVoca: Decodable {
+    var title: String
+    var words: [String]
+    var meanings: [String]
 }
 
 struct Recommend_Previews: PreviewProvider {
