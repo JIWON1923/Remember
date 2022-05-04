@@ -23,6 +23,7 @@ struct TodayWords: View {
             VStack(alignment: .leading) {
                 
                 Text("오늘의 단어")
+                    .fontWeight(.bold)
                 
                 ForEach(0 ..< words.count, id:  \.self) { i in
                     

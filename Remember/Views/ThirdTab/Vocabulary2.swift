@@ -1,18 +1,16 @@
 //
-//  Vocabulary.swift
+//  Vocabulary2.swift
 //  Remember
 //
-//  Created by 이지원 on 2022/05/04.
+//  Created by 이지원 on 2022/05/05.
 //
 
 import SwiftUI
 
-struct Vocabulary: View {
+struct Vocabulary2: View {
     
     let word: String
     let meaning: String
-    let correct: Bool
-    var color: String = "black"
     
     @State var isTapped = false
     
@@ -36,7 +34,6 @@ struct Vocabulary: View {
                     Text (meaning)
                         .frame(width: 100)
                     
-                        .foregroundColor(correct ? .blue : .red)
                 } else {
                     Text("")
                     .frame(width: 100) }
@@ -52,9 +49,9 @@ struct Vocabulary: View {
 }
 
                   
-//                  
-//struct Vocabulary_Previews: PreviewProvider {
-//    static var previews: some View {
-//        Vocabulary(word: "Apple", meaning: "사과", correct: false)
-//    }
-//}
+                  
+struct Vocabulary_Previews: PreviewProvider {
+    static var previews: some View {
+        Vocabulary(word: "Apple", meaning: "사과", correct: false)
+    }
+}

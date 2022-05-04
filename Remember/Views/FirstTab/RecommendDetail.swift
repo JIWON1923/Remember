@@ -28,11 +28,16 @@ struct RecommendDetail: View {
                     
                     HStack(alignment: .center) {
                         
-                        Text("word").padding(.leading, 30)
+                        Text("word")
+                            .fontWeight(.bold)
+                            .frame(width: 100)
+                        
                         Spacer()
                         Text("meaning")
+                            .fontWeight(.bold)
+                            .frame(width: 100)
                     }
-                    .frame(width: 300)
+                    .frame(width: 250)
                     
                     Divider()
                     

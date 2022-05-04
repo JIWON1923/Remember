@@ -13,7 +13,7 @@ struct MainTabView: View {
     
     var body: some View {
         
-        ScrollView {
+        ScrollView(showsIndicators: false) {
             
             ZStack {
                 Color("background")
@@ -22,7 +22,7 @@ struct MainTabView: View {
                 VStack {
                     TestTabView(coreDM: coreDM) // 오늘의 시험
                     TodayWords() // 오늘의 단어
-                    MemorizationStatus() // 암기 현황
+                    //MemorizationStatus() // 암기 현황
                     Recommend(coreDM: coreDM)
                 }
             }

@@ -36,11 +36,10 @@ struct Recommend: View {
                                     VerticalButton()
                                     Text(r.title)
                                         .fontWeight(.bold)
+                                        .foregroundColor(.black)
                                 }
                             }
-                            .padding(.leading, 15)
-                            .padding(.bottom, 15)
-                            .padding(.top, 15)
+                            .padding(7)
                         }
                     }
                 }

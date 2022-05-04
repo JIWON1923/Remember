@@ -18,39 +18,43 @@ struct TestTabView: View {
     var body: some View {
         
         //var tests = getTestVoca()
+        
         ZStack {
-            Rectangle()
-                .fill(Color.white)
-                .frame(height: CGFloat(tests.count * 50) + 100)
-            
-            VStack(alignment: .leading) {
-                Text ("오늘의 퀴즈")
-                    .fontWeight(.bold)
+            if tests.count != 0 {
+                Rectangle()
+                    .fill(Color.white)
+                    .frame(height: CGFloat(tests.count * 50) + 100)
                 
-                ZStack {
-                    VStack {
-                        
-                        // MARK : 질문
-                        ForEach(tests, id: \.self) { test in
-                            NavigationLink(
-                                destination: TestToResultView(coreDM: coreDM, voca: test)
+                VStack(alignment: .leading) {
+                    Text ("오늘의 퀴즈")
+                        .fontWeight(.bold)
+                    
+                    ZStack {
+                        VStack {
+                            
+                            // MARK : 질문
+                            ForEach(tests, id: \.self) { test in
+                                NavigationLink(
+                                    destination: TestToResultView(coreDM: coreDM, voca: test)
                                     //Test(rootIsActive: $isActive,
-                                      //            coreDM: coreDM, voca: test)
-                                //, isActive: $isActive
-                            ) {
-                                ZStack(alignment: .leading) {
-                                    HorizontalButton()
-                                    Text(test.title ?? "")
-                                        .padding()
+                                    //            coreDM: coreDM, voca: test)
+                                    //, isActive: $isActive
+                                ) {
+                                    ZStack(alignment: .leading) {
+                                        HorizontalButton()
+                                        Text(test.title ?? "")
+                                            .padding()
+                                            .foregroundColor(.black)
+                                    }
                                 }
+                                .isDetailLink(false)
                             }
-                            .isDetailLink(false)
                         }
+                        
                     }
-                    .onAppear(perform: { tests = coreDM.getAllTestVoca() })
                 }
             }
-        }
+        }.onAppear(perform: { tests = coreDM.getAllTestVoca() })
     }
     
     func getTestVoca() {

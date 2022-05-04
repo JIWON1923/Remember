@@ -43,7 +43,7 @@ struct MyVoca: View {
                     ScrollView(showsIndicators: false) {
                         ForEach(0..<word!.count, id: \.self) { index in
                             
-                            Vocabulary(word: word![index], meaning: meaning![index], correct: isCorrect![index])
+                            Vocabulary2(word: word![index], meaning: meaning![index])
                             
                         }
                     }

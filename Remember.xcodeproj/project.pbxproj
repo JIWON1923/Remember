@@ -13,6 +13,8 @@
 		87176B7A28223FA100D75C76 /* example.json in Resources */ = {isa = PBXBuildFile; fileRef = 87176B742821C1CB00D75C76 /* example.json */; };
 		872F02A5282267730046A0C5 /* Vocabulary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872F02A4282267730046A0C5 /* Vocabulary.swift */; };
 		872F02A72822EAF80046A0C5 /* MyVoca.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872F02A62822EAF80046A0C5 /* MyVoca.swift */; };
+		87790F992822F660006870DE /* 나눔손글씨 느릿느릿체.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 87790F982822F660006870DE /* 나눔손글씨 느릿느릿체.ttf */; };
+		87790F9B2822FBF7006870DE /* Vocabulary2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87790F9A2822FBF7006870DE /* Vocabulary2.swift */; };
 		877EB426281DAAF200946111 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 877EB425281DAAF200946111 /* LaunchScreen.storyboard */; };
 		877EB428281E57B500946111 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877EB427281E57B500946111 /* NavigationBar.swift */; };
 		877EB42A282009E600946111 /* ViewFlows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877EB429282009E600946111 /* ViewFlows.swift */; };
@@ -47,6 +49,8 @@
 		87176B782821D73100D75C76 /* RecommendDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendDetail.swift; sourceTree = "<group>"; };
 		872F02A4282267730046A0C5 /* Vocabulary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vocabulary.swift; sourceTree = "<group>"; };
 		872F02A62822EAF80046A0C5 /* MyVoca.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyVoca.swift; sourceTree = "<group>"; };
+		87790F982822F660006870DE /* 나눔손글씨 느릿느릿체.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "나눔손글씨 느릿느릿체.ttf"; path = "../../../Desktop/나눔손글씨 느릿느릿체.ttf"; sourceTree = "<group>"; };
+		87790F9A2822FBF7006870DE /* Vocabulary2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vocabulary2.swift; sourceTree = "<group>"; };
 		877EB425281DAAF200946111 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		877EB427281E57B500946111 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		877EB429282009E600946111 /* ViewFlows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFlows.swift; sourceTree = "<group>"; };
@@ -116,6 +120,7 @@
 				87BCF0EB281D14C300138163 /* MyVocabularyTabView.swift */,
 				87BCF0ED281D155900138163 /* MyVocaburaly.swift */,
 				872F02A62822EAF80046A0C5 /* MyVoca.swift */,
+				87790F9A2822FBF7006870DE /* Vocabulary2.swift */,
 			);
 			path = ThirdTab;
 			sourceTree = "<group>";
@@ -131,6 +136,14 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		87790F972822F5E5006870DE /* font */ = {
+			isa = PBXGroup;
+			children = (
+				87790F982822F660006870DE /* 나눔손글씨 느릿느릿체.ttf */,
+			);
+			path = font;
+			sourceTree = "<group>";
+		};
 		877EB4422821209F00946111 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +155,7 @@
 		87AED158281BABC000CF06FF = {
 			isa = PBXGroup;
 			children = (
+				87790F972822F5E5006870DE /* font */,
 				877EB4422821209F00946111 /* Managers */,
 				877EB43F28211FC500946111 /* Remember.xcdatamodeld */,
 				87AED163281BABC000CF06FF /* Remember */,
@@ -262,6 +276,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87790F992822F660006870DE /* 나눔손글씨 느릿느릿체.ttf in Resources */,
 				87176B7A28223FA100D75C76 /* example.json in Resources */,
 				877EB426281DAAF200946111 /* LaunchScreen.storyboard in Resources */,
 				87AED16C281BABC200CF06FF /* Preview Assets.xcassets in Resources */,
@@ -282,6 +297,7 @@
 				87BCF0E8281D05B200138163 /* CreateVocabulary.swift in Sources */,
 				87BCF0F0281D18F000138163 /* MyPageTabView.swift in Sources */,
 				877EB428281E57B500946111 /* NavigationBar.swift in Sources */,
+				87790F9B2822FBF7006870DE /* Vocabulary2.swift in Sources */,
 				87BCF0EC281D14C300138163 /* MyVocabularyTabView.swift in Sources */,
 				87BCF0E4281C3ABE00138163 /* CustomTextField.swift in Sources */,
 				87BCF0DE281C1CFD00138163 /* Recommend.swift in Sources */,
