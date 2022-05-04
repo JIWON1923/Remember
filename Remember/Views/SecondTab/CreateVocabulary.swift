@@ -88,11 +88,12 @@ struct CreateVocabulary: View {
             word.append(w[i])
             meaning.append(m[i])
         }
-        let isCorrect = [Int](repeating: 0, count: word.count)
-        
+        let score = [Int](repeating: 0, count: word.count)
+        let isCorrect = [Bool](repeating: false, count: word.count)
         if word.count != 0, title != "" {
+            
             coreDM.saveVoca(title: title, words: word,
-                            meanings: meaning, isCorrect: isCorrect, date: Date())
+                            meanings: meaning, score: score, date: Date(), count: 0, isCorrect: isCorrect)
             return false
             
         } else {

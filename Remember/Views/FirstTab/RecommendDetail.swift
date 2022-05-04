@@ -62,9 +62,11 @@ struct RecommendDetail: View {
             
             RoundedButton(buttonText: "가져오기")
                 .onTapGesture {
-                    let isCorrect = [Int](repeating: 0, count: word.count)
+                    let score = [Int](repeating: 0, count: word.count)
+                    let isCorrect = [Bool](repeating: false, count: word.count)
                     coreDM.saveVoca(title: voca.title , words: voca.words,
-                                    meanings: voca.meanings, isCorrect: isCorrect, date: Date())
+                                    meanings: voca.meanings, score: score, date: Date(),
+                                    count: 0, isCorrect: isCorrect)
                     NavigationUtil.popToRootView()
                 }
         }

@@ -21,7 +21,8 @@ class CoreDataManager {
         })
     }
     
-    func saveVoca(title: String, words: [String], meanings: [String], isCorrect: [Int], date: Date) {
+    func saveVoca(title: String, words: [String], meanings: [String],
+                  score: [Int], date: Date, count: Int16, isCorrect: [Bool]) {
         
         let voca = Voca(context: persistentContainer.viewContext)
         voca.title = title
@@ -29,6 +30,8 @@ class CoreDataManager {
         voca.meanings = meanings
         voca.id = UUID()
         voca.date = date
+        voca.score = score
+        voca.count = count
         voca.isCorrect = isCorrect
         
         

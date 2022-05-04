@@ -15,6 +15,7 @@ struct MyVocaburaly: View {
         
         let word = voca.words
         let meaning = voca.meanings
+        let isCorrect = voca.isCorrect
         
         VStack {
             ZStack {
@@ -42,7 +43,7 @@ struct MyVocaburaly: View {
                     ScrollView(showsIndicators: false) {
                         ForEach(0..<word!.count, id: \.self) { index in
                             
-                            Vocabulary(word: word![index], meaning: meaning![index])
+                            Vocabulary(word: word![index], meaning: meaning![index], correct: isCorrect![index])
                             
                         }
                     }

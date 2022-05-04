@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21E258" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Voca" representedClassName="Voca" syncable="YES" codeGenerationType="class">
-        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="count" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" customClassName="Int"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" customClassName="[Date]"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
-        <attribute name="isCorrect" optional="YES" attributeType="Transformable" customClassName="[Int]"/>
+        <attribute name="isCorrect" optional="YES" attributeType="Transformable" customClassName="[Bool]"/>
         <attribute name="meanings" optional="YES" attributeType="Transformable" customClassName="[String]"/>
+        <attribute name="score" optional="YES" attributeType="Transformable" customClassName="[Int]"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <attribute name="words" optional="YES" attributeType="Transformable" customClassName="[String]"/>
     </entity>
     <elements>
-        <element name="Voca" positionX="-54" positionY="-9" width="128" height="119"/>
+        <element name="Voca" positionX="-54" positionY="-9" width="128" height="149"/>
     </elements>
 </model>

@@ -48,9 +48,9 @@ struct Test: View {
     }
 }
 
-struct Test_Previews: PreviewProvider {
-    static var previews: some View {
-        Test(rootIsActive: .constant(false), coreDM: CoreDataManager(), voca: Voca())
-    }
-}
-
+//struct Test_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Test(rootIsActive: .constant(false), isCorrect: [0], coreDM: CoreDataManager(), voca: Voca())
+//    }
+//}
+//

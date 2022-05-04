@@ -26,7 +26,8 @@ struct TestToResultView: View {
     var body: some View {
         
         if appState.hasOnboarded {
-            TestResult(shouldPopToRootView: .constant(false), testResult: testResult, voca: voca)
+            TestResult(shouldPopToRootView: .constant(false), testResult: testResult,
+                       voca: voca, coreDM: coreDM)
                 .environmentObject(appState)
             
         } else {

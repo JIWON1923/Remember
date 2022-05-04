@@ -11,7 +11,8 @@ struct Vocabulary: View {
     
     let word: String
     let meaning: String
-    
+    let correct: Bool
+
     @State var isTapped = false
     
     var body: some View {
@@ -33,7 +34,7 @@ struct Vocabulary: View {
                 if isTapped {
                     Text (meaning)
                         .frame(width: 100)
-                    
+                        .foregroundColor(correct ? .blue : .red)
                 } else {
                     Text("")
                     .frame(width: 100) }
@@ -52,6 +53,6 @@ struct Vocabulary: View {
                   
 struct Vocabulary_Previews: PreviewProvider {
     static var previews: some View {
-        Vocabulary(word: "Apple", meaning: "사과")
+        Vocabulary(word: "Apple", meaning: "사과", correct: false)
     }
 }

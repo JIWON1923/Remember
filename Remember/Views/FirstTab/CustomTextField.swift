@@ -49,20 +49,29 @@ struct CustomTextField: View {
                         .foregroundColor(.white)
                 }
                 .onTapGesture {
-                    if currentPage < meanings.count - 1 {
+                    if currentPage < meanings.count {
                         
                         if isCorrected(answer: meanings[currentPage],
                                        userAnswer: inputText) {
                             
-                            var tmp = voca.isCorrect
-                            tmp![currentPage] += 1
-                            voca.isCorrect = tmp
+                            var tmpScore = voca.score
+                            tmpScore![currentPage] += 1
+                            voca.score = tmpScore
+                            
+                            var tmpCorrect = voca.isCorrect
+                            tmpCorrect![currentPage] = true
+                            voca.isCorrect = tmpCorrect
                             coreDM.updateVoca()
+                            
+                            if currentPage == meanings.count-1 {
+                                currentPage = 0
+                                appState.hasOnboarded = true
+                            }
                         }
                         currentPage += 1
                         inputText = ""
-                        
-                    } else {
+                    }
+                    else {
                         appState.hasOnboarded = true
                     }
                 }
@@ -91,21 +100,22 @@ struct CustomTextField: View {
         
         if meaning == input {
             
-            var c = voca.isCorrect
+            var c = voca.score
             c![index] += 1
-            voca.isCorrect = c
+            voca.score = c
             coreDM.updateVoca()
         }
     }
     
     func isCorrected(answer: String, userAnswer: String) -> Bool {
+        print(answer == userAnswer)
         guard answer == userAnswer else { return false }
         return true
     }
 }
 
-struct CustomTextField_Previews: PreviewProvider {
-    static var previews: some View {
-        CustomTextField(currentPage: .constant(0), testResult: .constant(["1"]), voca: Voca(), coreDM: CoreDataManager())
-    }
-}
+//struct CustomTextField_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CustomTextField(currentPage: .constant(0), testResult: .constant(["1"]), isCorrect: .constant([0]), voca: Voca(), coreDM: CoreDataManager())
+//    }
+//}

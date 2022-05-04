@@ -14,18 +14,17 @@ struct TestResult: View {
     @State var testResult: [String]
     @State var voca: Voca
     
+    let coreDM: CoreDataManager
+    
     var body: some View {
         VStack {
-            
-            let result = voca.isCorrect
-            
-            Text("\((result?.filter{ $0 == 0 }.count)!)개 틀렸습니다.")
-            
             MyVocaburaly(voca: voca)
             
             RoundedButton(buttonText: "돌아가기")
                 .onTapGesture {
                     //shouldPopToRootView = false
+                    voca.isCorrect = [Bool](repeating:false, count: voca.isCorrect!.count)
+                    coreDM.updateVoca()
                     NavigationUtil.popToRootView()
                     
                 }
@@ -34,11 +33,11 @@ struct TestResult: View {
     }
 }
 
-
-struct TestResult_Previews: PreviewProvider {
-    static var previews: some View {
-        TestResult(
-            shouldPopToRootView: .constant(false),
-            testResult: ["1", "2", "3"], voca: Voca())
-    }
-}
+//
+//struct TestResult_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TestResult(
+//            shouldPopToRootView: .constant(false),
+//            testResult: ["1", "2", "3"], voca: Voca())
+//    }
+//}
