@@ -15,17 +15,21 @@ struct TestResult: View {
     @State var voca: Voca
     
     var body: some View {
-        
         VStack {
+            
+            let result = voca.isCorrect
+            
+            Text("\((result?.filter{ $0 == 0 }.count)!)개 틀렸습니다.")
+            
             MyVocaburaly(voca: voca)
             
             RoundedButton(buttonText: "돌아가기")
                 .onTapGesture {
-                    self.shouldPopToRootView = false
+                    //shouldPopToRootView = false
                     NavigationUtil.popToRootView()
+                    
                 }
         }
-        
     }
 }
 

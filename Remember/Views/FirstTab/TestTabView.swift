@@ -31,8 +31,9 @@ struct TestTabView: View {
                         // MARK : 질문
                         ForEach(tests, id: \.self) { test in
                             NavigationLink(
-                                destination: Test(rootIsActive: $isActive,
-                                                  voca: test)
+                                destination: TestToResultView(coreDM: coreDM, voca: test)
+                                    //Test(rootIsActive: $isActive,
+                                      //            coreDM: coreDM, voca: test)
                                 //, isActive: $isActive
                             ) {
                                 ZStack(alignment: .leading) {
