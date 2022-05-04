@@ -30,6 +30,7 @@ struct TestResult: View {
                     
                 }
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 
