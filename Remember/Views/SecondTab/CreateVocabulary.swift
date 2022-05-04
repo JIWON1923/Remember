@@ -13,7 +13,7 @@ struct CreateVocabulary: View {
     @State var vocabularyName = ""
     @State var word = [String](repeating: "", count: 20)
     @State var meaning = [String](repeating: "", count: 20)
-    @State var showingAlert = false
+    @State var success = false
     
     let coreDM: CoreDataManager
     
@@ -60,20 +60,23 @@ struct CreateVocabulary: View {
             
             RoundedButton(buttonText: "등록하기")
                 .onTapGesture {
-                    self.showingAlert = true
-                    saveInfo(w: word, m: meaning, title: vocabularyName)
-                    word = [String](repeating: "", count: 20)
-                    meaning = [String](repeating: "", count: 20)
-                    vocabularyName = ""
+                    
+                    success = saveInfo(w: word, m: meaning, title: vocabularyName)
+                    
+                    if !success {
+                        word = [String](repeating: "", count: 20)
+                        meaning = [String](repeating: "", count: 20)
+                        vocabularyName = ""
+                    }
                 }
-                .alert(isPresented: $showingAlert) {
-                    Alert(title: Text("저장되었습니다."))
+                .alert(isPresented: $success) {
+                    Alert(title: Text("단어장 제목 혹은 내용이 비어있습니다."))
                 }
         }
         
     }
     
-    func saveInfo(w: [String], m: [String], title: String) {
+    func saveInfo(w: [String], m: [String], title: String) -> Bool {
         
         var word = [String]()
         var meaning = [String]()
@@ -87,8 +90,14 @@ struct CreateVocabulary: View {
         }
         let isCorrect = [Int](repeating: 0, count: word.count)
         
-        coreDM.saveVoca(title: title, words: word,
-                        meanings: meaning, isCorrect: isCorrect, date: Date())
+        if word.count != 0, title != "" {
+            coreDM.saveVoca(title: title, words: word,
+                            meanings: meaning, isCorrect: isCorrect, date: Date())
+            return false
+            
+        } else {
+            return true
+        }
     }
 }
 
