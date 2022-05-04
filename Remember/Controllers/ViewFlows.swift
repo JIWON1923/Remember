@@ -21,7 +21,7 @@ struct TestToResultView: View {
     @State var testResult = [String](repeating: "", count: 20)
     
     let coreDM: CoreDataManager
-    let voca: Voca
+    let voca: TestVoca
     
     var body: some View {
         

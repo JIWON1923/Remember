@@ -10,12 +10,14 @@ import SwiftUI
 struct TestTabView: View {
     
     @State var isActive: Bool = false
-    @State private var tests: [Voca] = [Voca]()
+    @State private var tests = [TestVoca]()
     @State var move = false
     
     let coreDM: CoreDataManager
     
     var body: some View {
+        
+        //var tests = getTestVoca()
         ZStack {
             Rectangle()
                 .fill(Color.white)
@@ -45,11 +47,40 @@ struct TestTabView: View {
                             .isDetailLink(false)
                         }
                     }
-                    .onAppear(perform: { tests = coreDM.getAllVoca() })
+                    .onAppear(perform: { tests = coreDM.getAllTestVoca() })
                 }
             }
         }
     }
+    
+    func getTestVoca() {
+        let vocas = coreDM.getAllVoca()
+        //var tests: [Voca] = []
+        
+        let date = NSDate()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy/MM/dd"
+        let dateString = dateFormatter.string(from: date as Date)
+        
+        for voca in vocas {
+            
+            let calendar = Calendar.current
+            let currentDate = Date()
+            let dateFormatter = DateFormatter()
+            var daysCount: Int = 0
+            
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            let startDate = dateFormatter.date(from: voca.date!)
+            daysCount = calendar.dateComponents([.day], from: startDate!, to: currentDate).day! + 1
+            
+            if daysCount == 1 {
+                coreDM.saveTest(title: voca.title!, words: voca.words!, meanings: voca.meanings!, score: voca.score!, date: dateString, count: voca.count+1, isCorrect: voca.isCorrect!)
+                
+            }
+        }
+    }
+    
+    
 }
 
 

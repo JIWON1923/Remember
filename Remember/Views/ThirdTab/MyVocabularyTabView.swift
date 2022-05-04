@@ -18,7 +18,7 @@ struct MyVocabularyTabView: View {
             List {
                 ForEach(vocas, id: \.self) { voca in
                     
-                    NavigationLink(destination: MyVocaburaly(voca: voca)) {
+                    NavigationLink(destination: MyVoca(voca: voca)) {
                         Text(voca.title ?? "")
                     }
                 }

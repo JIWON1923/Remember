@@ -64,8 +64,17 @@ struct RecommendDetail: View {
                 .onTapGesture {
                     let score = [Int](repeating: 0, count: word.count)
                     let isCorrect = [Bool](repeating: false, count: word.count)
+                    let date = NSDate()
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "yyyy/MM/dd"
+                    let dateString = dateFormatter.string(from: date as Date)
+                    
                     coreDM.saveVoca(title: voca.title , words: voca.words,
-                                    meanings: voca.meanings, score: score, date: Date(),
+                                    meanings: voca.meanings, score: score, date: dateString,
+                                    count: 0, isCorrect: isCorrect)
+                    
+                    coreDM.saveTest(title: voca.title , words: voca.words,
+                                    meanings: voca.meanings, score: score, date: dateString,
                                     count: 0, isCorrect: isCorrect)
                     NavigationUtil.popToRootView()
                 }

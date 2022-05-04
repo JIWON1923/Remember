@@ -12,7 +12,7 @@ struct TestResult: View {
     @Binding var shouldPopToRootView : Bool
     
     @State var testResult: [String]
-    @State var voca: Voca
+    @State var voca: TestVoca
     
     let coreDM: CoreDataManager
     
@@ -25,6 +25,7 @@ struct TestResult: View {
                     //shouldPopToRootView = false
                     voca.isCorrect = [Bool](repeating:false, count: voca.isCorrect!.count)
                     coreDM.updateVoca()
+                    coreDM.deleteVoca(test: voca)
                     NavigationUtil.popToRootView()
                     
                 }

@@ -17,7 +17,7 @@ struct Test: View {
     
     let coreDM: CoreDataManager
     
-    var voca: Voca
+    var voca: TestVoca
     
     var body: some View {
         

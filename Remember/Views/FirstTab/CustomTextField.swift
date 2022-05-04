@@ -17,7 +17,7 @@ struct CustomTextField: View {
     @Binding var currentPage: Int
     @Binding var testResult: [String]
     
-    let voca: Voca
+    let voca: TestVoca
     let coreDM: CoreDataManager
     
     var body: some View {

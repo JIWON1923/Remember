@@ -1,15 +1,15 @@
 //
-//  MyVocaburaly.swift
+//  MyVoca.swift
 //  Remember
 //
-//  Created by 이지원 on 2022/04/30.
+//  Created by 이지원 on 2022/05/05.
 //
 
 import SwiftUI
 
-struct MyVocaburaly: View {
+struct MyVoca: View {
     
-    let voca: TestVoca
+    let voca: Voca
     
     var body: some View {
         

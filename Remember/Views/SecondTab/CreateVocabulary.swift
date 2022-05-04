@@ -90,10 +90,18 @@ struct CreateVocabulary: View {
         }
         let score = [Int](repeating: 0, count: word.count)
         let isCorrect = [Bool](repeating: false, count: word.count)
+        let date = NSDate()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy/MM/dd"
+        let dateString = dateFormatter.string(from: date as Date)
+        
         if word.count != 0, title != "" {
-            
+            print("\(Date()) hihihihi")
             coreDM.saveVoca(title: title, words: word,
-                            meanings: meaning, score: score, date: Date(), count: 0, isCorrect: isCorrect)
+                            meanings: meaning, score: score, date: dateString, count: 0, isCorrect: isCorrect)
+            
+            coreDM.saveTest(title: title, words: word,
+                            meanings: meaning, score: score, date: dateString, count: 0, isCorrect: isCorrect)
             return false
             
         } else {

@@ -20,9 +20,53 @@ class CoreDataManager {
             }
         })
     }
+    func getAllTest() -> [TestVoca] {
+        let fetchRequest: NSFetchRequest<TestVoca> = TestVoca.fetchRequest()
+        let sort = NSSortDescriptor(keyPath: \TestVoca.date, ascending: true)
+        fetchRequest.sortDescriptors = [sort]
+        
+        do {
+            return try persistentContainer.viewContext.fetch(fetchRequest)
+        } catch {
+            return []
+        }
+    }
+    func saveTest(title: String, words: [String], meanings: [String],
+                  score: [Int], date: String, count: Int16, isCorrect: [Bool]) {
+        
+        let test = TestVoca(context: persistentContainer.viewContext)
+        test.title = title
+        test.words = words
+        test.meanings = meanings
+        test.id = UUID()
+        test.date = date
+        test.score = score
+        test.count = count
+        test.isCorrect = isCorrect
+        
+        
+        do {
+           try persistentContainer.viewContext.save()
+            
+        } catch {
+            print("Failed to save voca \(error.localizedDescription)")
+        }
+    }
+    
+    func getAllTestVoca() -> [TestVoca] {
+        let fetchRequest: NSFetchRequest<TestVoca> = TestVoca.fetchRequest()
+        let sort = NSSortDescriptor(keyPath: \TestVoca.date, ascending: true)
+        fetchRequest.sortDescriptors = [sort]
+        
+        do {
+            return try persistentContainer.viewContext.fetch(fetchRequest)
+        } catch {
+            return []
+        }
+    }
     
     func saveVoca(title: String, words: [String], meanings: [String],
-                  score: [Int], date: Date, count: Int16, isCorrect: [Bool]) {
+                  score: [Int], date: String, count: Int16, isCorrect: [Bool]) {
         
         let voca = Voca(context: persistentContainer.viewContext)
         voca.title = title
@@ -62,5 +106,16 @@ class CoreDataManager {
             persistentContainer.viewContext.rollback()
         }
     }
-
+    
+    func deleteVoca(test: TestVoca) {
+        persistentContainer.viewContext.delete(test)
+        
+        do {
+            try persistentContainer.viewContext.save()
+        } catch {
+            persistentContainer.viewContext.rollback()
+            print("Failed to save Context \(error)")
+        }
+    }
+   
 }

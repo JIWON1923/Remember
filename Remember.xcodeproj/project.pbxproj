@@ -12,6 +12,7 @@
 		87176B792821D73100D75C76 /* RecommendDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87176B782821D73100D75C76 /* RecommendDetail.swift */; };
 		87176B7A28223FA100D75C76 /* example.json in Resources */ = {isa = PBXBuildFile; fileRef = 87176B742821C1CB00D75C76 /* example.json */; };
 		872F02A5282267730046A0C5 /* Vocabulary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872F02A4282267730046A0C5 /* Vocabulary.swift */; };
+		872F02A72822EAF80046A0C5 /* MyVoca.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872F02A62822EAF80046A0C5 /* MyVoca.swift */; };
 		877EB426281DAAF200946111 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 877EB425281DAAF200946111 /* LaunchScreen.storyboard */; };
 		877EB428281E57B500946111 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877EB427281E57B500946111 /* NavigationBar.swift */; };
 		877EB42A282009E600946111 /* ViewFlows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877EB429282009E600946111 /* ViewFlows.swift */; };
@@ -45,6 +46,7 @@
 		87176B752821C93A00D75C76 /* JSONManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONManager.swift; sourceTree = "<group>"; };
 		87176B782821D73100D75C76 /* RecommendDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendDetail.swift; sourceTree = "<group>"; };
 		872F02A4282267730046A0C5 /* Vocabulary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vocabulary.swift; sourceTree = "<group>"; };
+		872F02A62822EAF80046A0C5 /* MyVoca.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyVoca.swift; sourceTree = "<group>"; };
 		877EB425281DAAF200946111 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		877EB427281E57B500946111 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		877EB429282009E600946111 /* ViewFlows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFlows.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 			children = (
 				87BCF0EB281D14C300138163 /* MyVocabularyTabView.swift */,
 				87BCF0ED281D155900138163 /* MyVocaburaly.swift */,
+				872F02A62822EAF80046A0C5 /* MyVoca.swift */,
 			);
 			path = ThirdTab;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				87BCF0E2281C397A00138163 /* Test.swift in Sources */,
 				87BCF0D8281C0B1900138163 /* TodayWords.swift in Sources */,
 				87AED167281BABC000CF06FF /* ContentView.swift in Sources */,
+				872F02A72822EAF80046A0C5 /* MyVoca.swift in Sources */,
 				872F02A5282267730046A0C5 /* Vocabulary.swift in Sources */,
 				87176B6F2821B2ED00D75C76 /* NavigationUtil.swift in Sources */,
 				87BCF0EE281D155900138163 /* MyVocaburaly.swift in Sources */,
