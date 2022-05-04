@@ -35,15 +35,6 @@ struct Test: View {
                         .background(Color("background"))
                         .tag(index)
                 }
-                
-                Button(action: {}) {
-                    NavigationLink(destination: TestResult(shouldPopToRootView: $rootIsActive,
-                                                           testResult: testResult,
-                                                           voca: voca)) {
-                        Text("제출하기")
-                    }
-                                                           .isDetailLink(false)
-                } .tag(words!.count)
             }
             .frame(height: 450)
             .tabViewStyle(.page(indexDisplayMode: .never))

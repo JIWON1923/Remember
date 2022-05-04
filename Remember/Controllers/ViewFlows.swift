@@ -15,19 +15,26 @@ class AppState: ObservableObject {
     }
 }
 
-//struct TestToResultView: View {
-//    @StateObject var appState = AppState(hasOnboarded: false)
-//    var body: some View {
-//        if appState.hasOnboarded {
-//            MainTabView()
-//                .environmentObject(appState)
-//        } else {
-//            Test()
-//                .environmentObject(appState)
-//            
-//        }
-//    }
-//}
+struct TestToResultView: View {
+    
+    @StateObject var appState = AppState(hasOnboarded: false)
+    @State var testResult = [String](repeating: "", count: 20)
+    
+    let coreDM: CoreDataManager
+    let voca: Voca
+    
+    var body: some View {
+        
+        if appState.hasOnboarded {
+            TestResult(shouldPopToRootView: .constant(false), testResult: testResult, voca: voca)
+                .environmentObject(appState)
+            
+        } else {
+            Test(rootIsActive: .constant(false), coreDM: coreDM, voca: voca)
+                .environmentObject(appState)
+        }
+    }
+}
 
 //struct CreateVocaToMain: View {
 //    @StateObject var appState = AppState(hasOnboarded: false)

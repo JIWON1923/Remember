@@ -9,6 +9,8 @@ import SwiftUI
 
 struct CustomTextField: View {
     
+    @EnvironmentObject var appState: AppState
+    
     @State var inputText = ""
     @State var keyboardHeight: CGFloat = 0
     
@@ -47,23 +49,29 @@ struct CustomTextField: View {
                         .foregroundColor(.white)
                 }
                 .onTapGesture {
-                    if currentPage < meanings.count {
+                    if currentPage < meanings.count - 1 {
                         
-                        if isCorrected(answer: meanings[currentPage], userAnswer: inputText) {
+                        if isCorrected(answer: meanings[currentPage],
+                                       userAnswer: inputText) {
+                            
                             var tmp = voca.isCorrect
                             tmp![currentPage] += 1
                             voca.isCorrect = tmp
                             coreDM.updateVoca()
                         }
                         currentPage += 1
+                        inputText = ""
+                        
+                    } else {
+                        appState.hasOnboarded = true
                     }
-                    inputText = ""
                 }
                 Spacer()
             }
             .padding()
         }
         .padding(.bottom, self.keyboardHeight)
+        
         .onAppear() {
             NotificationCenter.default.addObserver(forName: UIResponder.keyboardDidShowNotification,
                                                    object: nil, queue: .main) { (data) in
@@ -78,6 +86,7 @@ struct CustomTextField: View {
             }
         }
     }
+    
     func isCorrected(index: Int, meaning: String, input: String) {
         
         if meaning == input {
