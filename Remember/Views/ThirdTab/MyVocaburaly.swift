@@ -27,28 +27,22 @@ struct MyVocaburaly: View {
                     
                     HStack(alignment: .center) {
                         
-                        Text("word").padding(.leading, 30)
+                        Text("word")
+                            .fontWeight(.bold)
+                            .frame(width: 100)
                         Spacer()
                         Text("meaning")
+                            .fontWeight(.bold)
+                            .frame(width: 100)
                     }
-                    .frame(width: 300)
+                    .frame(width: 250)
                     
                     Divider()
                     
                     ScrollView(showsIndicators: false) {
                         ForEach(0..<word!.count, id: \.self) { index in
                             
-                            HStack(spacing: 10) {
-                                Text(word![index])
-                                    .frame(width: 150)
-                                
-                                Spacer()
-                                Divider()
-                                
-                                Text(meaning![index])
-                                    .frame(width: 150)
-                            }
-                            .frame(width: 300, height:50)
+                            Vocabulary(word: word![index], meaning: meaning![index])
                             
                         }
                     }

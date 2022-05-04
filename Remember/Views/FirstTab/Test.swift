@@ -13,8 +13,9 @@ struct Test: View {
     
     @State var keyboardHeight: CGFloat = 0
     @State var currentPage: Int = 0
-    @State var needRefresh: Bool = false
     @State var testResult = [String](repeating: "", count: 20)
+    
+    let coreDM: CoreDataManager
     
     var voca: Voca
     
@@ -50,7 +51,7 @@ struct Test: View {
             
             Spacer()
             
-            CustomTextField(currentPage: $currentPage, needRefresh: $needRefresh, testResult: $testResult, voca: voca)
+            CustomTextField(currentPage: $currentPage, testResult: $testResult, voca: voca, coreDM: coreDM)
         }
         .navigationTitle("오늘의 퀴즈")
     }
@@ -58,7 +59,7 @@ struct Test: View {
 
 struct Test_Previews: PreviewProvider {
     static var previews: some View {
-        Test(rootIsActive: .constant(false), voca: Voca())
+        Test(rootIsActive: .constant(false), coreDM: CoreDataManager(), voca: Voca())
     }
 }
 

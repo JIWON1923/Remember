@@ -13,11 +13,10 @@ struct CustomTextField: View {
     @State var keyboardHeight: CGFloat = 0
     
     @Binding var currentPage: Int
-    @Binding var needRefresh: Bool
     @Binding var testResult: [String]
     
     let voca: Voca
-    let coreDM = CoreDataManager()
+    let coreDM: CoreDataManager
     
     var body: some View {
         
@@ -49,11 +48,14 @@ struct CustomTextField: View {
                 }
                 .onTapGesture {
                     if currentPage < meanings.count {
-                        isCorrected(index: currentPage, meaning: meanings[currentPage], input: inputText)
-                        currentPage += 1
                         
-                    } else {
-                        needRefresh.toggle()
+                        if isCorrected(answer: meanings[currentPage], userAnswer: inputText) {
+                            var tmp = voca.isCorrect
+                            tmp![currentPage] += 1
+                            voca.isCorrect = tmp
+                            coreDM.updateVoca()
+                        }
+                        currentPage += 1
                     }
                     inputText = ""
                 }
@@ -86,10 +88,15 @@ struct CustomTextField: View {
             coreDM.updateVoca()
         }
     }
+    
+    func isCorrected(answer: String, userAnswer: String) -> Bool {
+        guard answer == userAnswer else { return false }
+        return true
+    }
 }
 
 struct CustomTextField_Previews: PreviewProvider {
     static var previews: some View {
-        CustomTextField(currentPage: .constant(0), needRefresh: .constant(false), testResult: .constant(["1"]), voca: Voca())
+        CustomTextField(currentPage: .constant(0), testResult: .constant(["1"]), voca: Voca(), coreDM: CoreDataManager())
     }
 }
