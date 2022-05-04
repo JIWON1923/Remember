@@ -8,64 +8,73 @@
 import SwiftUI
 
 struct RecommendDetail: View {
+    
+    let voca: RecommendVoca
+    let coreDM: CoreDataManager
+    
+    var body: some View {
         
-        let voca: RecommendVoca
+        let word = voca.words
+        let meaning = voca.meanings
         
-        var body: some View {
-            
-            let word = voca.words
-            let meaning = voca.meanings
-            
-            VStack {
-                ZStack {
-                    Rectangle()
-                        .fill(Color("voca"))
-                        .frame(width: 350, height: 600)
-                        .cornerRadius(30)
+        VStack {
+            ZStack {
+                Rectangle()
+                    .fill(Color("voca"))
+                    .frame(width: 350, height: 600)
+                    .cornerRadius(30)
+                
+                VStack(alignment: .leading, spacing: 10) {
                     
-                    VStack(alignment: .leading, spacing: 10) {
+                    HStack(alignment: .center) {
                         
-                        HStack(alignment: .center) {
-                            
-                            Text("word").padding(.leading, 30)
-                            Spacer()
-                            Text("meaning")
-                        }
-                        .frame(width: 300)
-                        
-                        Divider()
-                        
-                        ScrollView(showsIndicators: false) {
-                            ForEach(0..<word.count, id: \.self) { index in
-                                
-                                HStack(spacing: 10) {
-                                    Text(word[index])
-                                        .frame(width: 150)
-                                    
-                                    Spacer()
-                                    Divider()
-                                    
-                                    Text(meaning[index])
-                                        .frame(width: 150)
-                                }
-                                .frame(width: 300, height:50)
-                                
-                            }
-                        }
-                        .frame(height: 500)
-                        
+                        Text("word").padding(.leading, 30)
+                        Spacer()
+                        Text("meaning")
                     }
                     .frame(width: 300)
+                    
+                    Divider()
+                    
+                    ScrollView(showsIndicators: false) {
+                        ForEach(0..<word.count, id: \.self) { index in
+                            
+                            HStack(spacing: 10) {
+                                Text(word[index])
+                                    .frame(width: 150)
+                                
+                                Spacer()
+                                Divider()
+                                
+                                Text(meaning[index])
+                                    .frame(width: 150)
+                            }
+                            .frame(width: 300, height:50)
+                            
+                        }
+                    }
+                    .frame(height: 500)
+                    
                 }
-                .padding()
+                .frame(width: 300)
             }
-            .navigationTitle(voca.title)
+            .padding()
+            
+            RoundedButton(buttonText: "가져오기")
+                .onTapGesture {
+                    let isCorrect = [Int](repeating: 0, count: word.count)
+                    coreDM.saveVoca(title: voca.title , words: voca.words,
+                                    meanings: voca.meanings, isCorrect: isCorrect, date: Date())
+                    NavigationUtil.popToRootView()
+                }
         }
+        .navigationTitle(voca.title)
     }
+}
 
-
-//struct RecommendVoca_Previews: PreviewProvider {
+//
+//struct RecommendDetail_Previews: PreviewProvider {
 //    static var previews: some View {
-//        RecommendVoca()
+//        RecommendDetail()
 //    }
 //}

@@ -31,7 +31,7 @@ struct ContentView: View {
         
         TabView(selection: $navigationTitle) {
             
-            MainTabView()
+            MainTabView(coreDM: coreDM)
             
                 .tabItem {
                     Image(systemName: "house.fill")

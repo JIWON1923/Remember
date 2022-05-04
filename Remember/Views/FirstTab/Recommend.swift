@@ -9,7 +9,9 @@ import SwiftUI
 
 struct Recommend: View {
     
-    private var recommendVoca: [RecommendVoca] = RecommendVoca.allVoca
+    let coreDM: CoreDataManager
+    
+    var recommendVoca: [RecommendVoca] = RecommendVoca.allVoca
     
     var body: some View {
         
@@ -29,7 +31,7 @@ struct Recommend: View {
                         
                         ForEach(recommendVoca, id: \.id) { r in
                             
-                            NavigationLink(destination: RecommendDetail(voca: r)) {
+                            NavigationLink(destination: RecommendDetail(voca: r, coreDM: coreDM)) {
                                 ZStack {
                                     VerticalButton()
                                     Text(r.title)
@@ -56,6 +58,6 @@ struct RecommenVoca: Decodable {
 
 struct Recommend_Previews: PreviewProvider {
     static var previews: some View {
-        Recommend()
+        Recommend(coreDM: CoreDataManager())
     }
 }
