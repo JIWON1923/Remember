@@ -18,6 +18,7 @@ struct CreateVocabulary: View {
     @State var papago = [String](repeating: "", count: 20)
     @State var success = false
     
+    
     let coreDM: CoreDataManager
     
     var body: some View {
@@ -124,6 +125,8 @@ struct VocaburalyColumn: View {
     @Binding var papago: String
     @State var placeHolder = ""
     
+    @FocusState private var focusConfirm: Bool
+    
     var body: some View {
         
         
@@ -132,42 +135,30 @@ struct VocaburalyColumn: View {
                 
                 TextField("", text: $word)
                     .onSubmit {
-                        //isComplete.toggle()
-//                        placeHolder = viewModel.requestAPI(sentence: word)
-//                        print(placeHolder)
-//                        print("hihihi")
-//                        viewModel.requestAPI(sentence: word)
-//                        print(placeHolder)
-//                        print("hihihi")
                         viewModel.requestAPI(sentence: word)
                         papago = viewModel.text
-                        
+                        focusConfirm = true
                     }
                 
                 Divider()
                 Spacer()
                 TextField(viewModel.text, text: $meaning)
+                    
+                    .focused($focusConfirm)
                     .onSubmit {
                         if meaning == "" {
                             meaning = viewModel.text
                         }
                     }
-                
-                
-                //meaning = viewModel.requestAPI(sentence: word)
-                //Text(viewModel.requestAPI(sentence: word))
-//                TextField(placeHolder, text: $meaning)
             }
             .frame(width: 300, height:50)
             
             Divider()
                 .frame(width: 350)
-        }//.onAppear(perform: word = viewModel.requestAPI(sentence: word))
+        }
+        
     }
     
-//    func getMeaning() -> String {
-//        viewModel.requestAPI(sentence: word)
-//    }
    
     
 }
