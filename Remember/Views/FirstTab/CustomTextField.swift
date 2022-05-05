@@ -49,7 +49,7 @@ struct CustomTextField: View {
                         .foregroundColor(.white)
                 }
                 .onTapGesture {
-                    if currentPage < meanings.count {
+                outLoop: if currentPage < meanings.count {
                         
                         if isCorrected(answer: meanings[currentPage],
                                        userAnswer: inputText) {
@@ -63,15 +63,15 @@ struct CustomTextField: View {
                             voca.isCorrect = tmpCorrect
                             coreDM.updateVoca()
                             
-                            if currentPage == meanings.count - 1 {
-                                appState.hasOnboarded = true
-                                return
-                            }
+//                            if currentPage == meanings.count - 2 {
+//                                appState.hasOnboarded = true
+//                                break outLoop
+//                            }
                         }
                         currentPage += 1
                         inputText = ""
                     }
-                    else {
+                    if currentPage == meanings.count {
                         appState.hasOnboarded = true
                     }
                 }
