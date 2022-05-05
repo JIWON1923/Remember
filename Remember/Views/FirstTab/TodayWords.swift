@@ -24,10 +24,11 @@ struct TodayWords: View {
                 
                 Text("오늘의 단어")
                     .fontWeight(.bold)
+                    //.font(.custom("나눔손글씨 세계적인 한글", size: 35))
                 
                 ForEach(0 ..< words.count, id:  \.self) { i in
                     
-                    ZStack{
+                    ZStack(alignment: .leading) {
                         
                         HorizontalButton()
                             .onTapGesture {
@@ -36,9 +37,13 @@ struct TodayWords: View {
                         
                         if isTapped[i] {
                             Text(meanings[i])
+                                .padding()
+                                //.font(.custom("나눔손글씨 세계적인 한글", size: 25))
                             
                         } else {
                             Text(words[i])
+                                .padding()
+                                //.font(.custom("나눔손글씨 세계적인 한글", size: 25))
                         }
                         
 //                        Text(word)

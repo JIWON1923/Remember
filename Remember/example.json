@@ -3,27 +3,31 @@
         "id": 0,
         "title": "투자",
         "words": ["investment", "property", "bond", "outlook", "entrepreneur", "insight"],
-        "meanings": ["투자", "재산", "채권", "전망", "사업가", "통찰력"]
+        "meanings": ["투자", "재산", "채권", "전망", "사업가", "통찰력"],
+        "image": "https://user-images.githubusercontent.com/68676844/166906302-749776e2-69b3-4925-a0a1-bb0442899a78.png"
     },
 
     {
         "id": 1,
         "title": "환경",
         "words": ["waste", "recycling", "deplete", "purify", "ecology"],
-        "meanings": ["쓰레기", "재활용", "고갈시키다", "정화시키다", "자연환경"]
+        "meanings": ["쓰레기", "재활용", "고갈시키다", "정화시키다", "자연환경"],
+        "image": "https://user-images.githubusercontent.com/68676844/166907051-b5f04cb0-3c1f-4e1f-9882-07a157663a96.png"
     },
     
     {
         "id": 2,
         "title": "건강",
         "words": ["fatigue", "checkup", "symptom", "physician", "diagnosis"],
-        "meanings": ["피로", "건강 진단", "증상", "내과의사", "진단"]
+        "meanings": ["피로", "건강 진단", "증상", "내과의사", "진단"],
+        "image": "https://user-images.githubusercontent.com/68676844/166907681-4fc42b8d-4669-4e77-b49b-6aad49c5b6b9.png"
     },
     
     {
         "id": 3,
         "title": "교통",
         "words": ["congestion", "alleviate", "divert", "fuel", "malfunction"],
-        "meanings": ["체증", "완화하다", "우회시키다", "연료", "오작동"]
+        "meanings": ["체증", "완화하다", "우회시키다", "연료", "오작동"],
+        "image": "https://user-images.githubusercontent.com/68676844/166907685-a3df9b8a-9eda-48d5-a6ea-33baf912aaf7.png"
     }
 ]

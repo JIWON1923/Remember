@@ -23,6 +23,10 @@ struct NavigationBarColor: ViewModifier {
         UINavigationBar.appearance().scrollEdgeAppearance = coloredAppearance
         UINavigationBar.appearance().compactAppearance = coloredAppearance
         UINavigationBar.appearance().tintColor = tintColor
+        
+        coloredAppearance.titleTextAttributes = [
+                NSAttributedString.Key.foregroundColor: UIColor.white,
+                NSAttributedString.Key.font: UIFont(name: "나눔손글씨 세계적인 한글", size: 40)]
     }
     
     func body(content: Content) -> some View {

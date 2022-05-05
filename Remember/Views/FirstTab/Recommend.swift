@@ -25,6 +25,7 @@ struct Recommend: View {
             VStack(alignment: .leading) {
                 Text("추천 단어장")
                     .fontWeight(.bold)
+                    //.font(.custom("나눔손글씨 느릿느릿체", size: 30))
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
@@ -34,9 +35,24 @@ struct Recommend: View {
                             NavigationLink(destination: RecommendDetail(voca: r, coreDM: coreDM)) {
                                 ZStack {
                                     VerticalButton()
-                                    Text(r.title)
-                                        .fontWeight(.bold)
-                                        .foregroundColor(.black)
+                                    
+                                    VStack {
+                                    
+                                        AsyncImage(url: URL(string: r.image)) { phase in
+                                            switch phase {
+                                            case .success(let image):
+                                                image.resizable()
+                                                    .aspectRatio(contentMode: .fit)
+                                                    .frame(maxWidth: 116, maxHeight: 116)
+                                            default:
+                                                Text("")
+                                            }
+                                        }
+                                        Text(r.title)
+                                            .fontWeight(.bold)
+                                            .foregroundColor(.black)
+                                        //.font(.custom("나눔손글씨 느릿느릿체", size: 25))
+                                    }
                                 }
                             }
                             .padding(7)

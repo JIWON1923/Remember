@@ -15,7 +15,7 @@ struct VerticalButton: View {
             .fill(Color.white)
             .frame(width: 130, height: 180)
             .cornerRadius(10)
-            .shadow(color: Color("shadow"), radius: 5)
+            .shadow(color: Color("shadow"), radius: 3)
         
     }
 }

@@ -28,6 +28,7 @@ struct TestTabView: View {
                 VStack(alignment: .leading) {
                     Text ("오늘의 퀴즈")
                         .fontWeight(.bold)
+                        //.font(.custom("나눔손글씨 느릿느릿체", size: 35))
                     
                     ZStack {
                         VStack {
@@ -45,6 +46,7 @@ struct TestTabView: View {
                                         Text(test.title ?? "")
                                             .padding()
                                             .foregroundColor(.black)
+                                            //.font(.custom("나눔손글씨 느릿느릿체", size: 25))
                                     }
                                 }
                                 .isDetailLink(false)

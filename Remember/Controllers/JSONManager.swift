@@ -10,7 +10,7 @@ import SwiftUI
 struct RecommendVoca: Codable, Hashable {
     
     var id: Int
-    let title: String
+    let title, image: String
     let words, meanings: [String]
     
     static let allVoca: [RecommendVoca] = Bundle.main.decode(file: "example.json")

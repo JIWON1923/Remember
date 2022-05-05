@@ -15,7 +15,7 @@ struct HorizontalButton: View {
             .fill(Color.white)
             .cornerRadius(10)
             .frame(width: 340, height: 50)
-            .shadow(color: Color("shadow"), radius: 5)
+            .shadow(color: Color("shadow"), radius: 3)
             .padding(3)
     }
 }
