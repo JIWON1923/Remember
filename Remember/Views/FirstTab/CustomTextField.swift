@@ -63,9 +63,9 @@ struct CustomTextField: View {
                             voca.isCorrect = tmpCorrect
                             coreDM.updateVoca()
                             
-                            if currentPage == meanings.count-1 {
-                                currentPage = 0
+                            if currentPage == meanings.count - 1 {
                                 appState.hasOnboarded = true
+                                return
                             }
                         }
                         currentPage += 1
