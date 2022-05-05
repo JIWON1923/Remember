@@ -29,5 +29,13 @@
         "words": ["congestion", "alleviate", "divert", "fuel", "malfunction"],
         "meanings": ["체증", "완화하다", "우회시키다", "연료", "오작동"],
         "image": "https://user-images.githubusercontent.com/68676844/166907685-a3df9b8a-9eda-48d5-a6ea-33baf912aaf7.png"
+    },
+    
+    {
+        "id": 4,
+        "title": "쇼핑",
+        "words": ["purchase", "price", "affordable", "exactly", "installment", "charge", "experienced", "instruction", "warranty", "refund", "delivery"],
+        "meanings": ["구매하다", "가격", "감당할 수 있는", "정확히", "할부", "요금", "노련한", "설명", "보증서", "환불", "배달"],
+        "image": "https://user-images.githubusercontent.com/68676844/166924480-98348578-4885-42e0-b438-b013fab5bfaa.png"
     }
 ]
