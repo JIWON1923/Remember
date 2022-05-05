@@ -51,11 +51,11 @@
 		87176B782821D73100D75C76 /* RecommendDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendDetail.swift; sourceTree = "<group>"; };
 		872F02A4282267730046A0C5 /* Vocabulary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vocabulary.swift; sourceTree = "<group>"; };
 		872F02A62822EAF80046A0C5 /* MyVoca.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyVoca.swift; sourceTree = "<group>"; };
-		87790F982822F660006870DE /* 나눔손글씨 느릿느릿체.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "나눔손글씨 느릿느릿체.ttf"; path = "../../../Desktop/나눔손글씨 느릿느릿체.ttf"; sourceTree = "<group>"; };
+		87790F982822F660006870DE /* 나눔손글씨 느릿느릿체.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "나눔손글씨 느릿느릿체.ttf"; sourceTree = "<group>"; };
 		87790F9A2822FBF7006870DE /* Vocabulary2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vocabulary2.swift; sourceTree = "<group>"; };
 		87790F9C2822FEF5006870DE /* PapagoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PapagoAPI.swift; sourceTree = "<group>"; };
 		87790FA02823C15E006870DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		87790FA12823C572006870DE /* 나눔손글씨 세계적인 한글.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "나눔손글씨 세계적인 한글.ttf"; path = "../../../Desktop/나눔손글씨 세계적인 한글.ttf"; sourceTree = "<group>"; };
+		87790FA12823C572006870DE /* 나눔손글씨 세계적인 한글.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "나눔손글씨 세계적인 한글.ttf"; sourceTree = "<group>"; };
 		877EB425281DAAF200946111 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		877EB427281E57B500946111 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		877EB429282009E600946111 /* ViewFlows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFlows.swift; sourceTree = "<group>"; };
