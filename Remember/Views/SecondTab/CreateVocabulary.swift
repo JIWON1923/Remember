@@ -9,8 +9,7 @@ import SwiftUI
 
 struct CreateVocabulary: View {
     
-   // @ObservedObject var viewModel = ViewModel()
-    
+    // @ObservedObject var viewModel = ViewModel()
     @State var pressButton: Bool = false
     @State var vocabularyName = ""
     @State var word = [String](repeating: "", count: 20)
@@ -23,61 +22,63 @@ struct CreateVocabulary: View {
     
     var body: some View {
         
-        VStack {
-            ZStack {
-                
-                Rectangle()
-                    .fill(Color("voca"))
-                    .frame(width: 350, height: 550)
-                    .cornerRadius(30)
-                
-                VStack (alignment: .leading, spacing: 10) {
-                    
-                    TextField("Vocaburaly Name", text: $vocabularyName)
-                        .frame(width: 300, height: 40)
-                        .padding(.leading, 20)
-                    
-                    Divider()
-                        .frame(width: 350)
-                    
-                    HStack(alignment: .center) {
-                        
-                        Text("word").padding(.leading, 30)
-                        Spacer()
-                        Text("meaning")
-                        
-                    }
-                    .frame(width: 300)
-                    
-                    Divider()
-                    
-                    ScrollView {
-                        ForEach(0..<20, id: \.self) { index in
-                            VocaburalyColumn(word: $word[index],
-                                             meaning: $meaning[index], papago: $papago[index])
-                        }
-                        .frame(width: 350)
-                    }
-                    .frame(height: 400)
-                }
-            }.padding()
+        ScrollView(showsIndicators: false) {
             
-            RoundedButton(buttonText: "등록하기")
-                .onTapGesture {
+            VStack {
+                ZStack {
                     
-                    success = saveInfo(w: word, m: meaning, title: vocabularyName)
+                    Rectangle()
+                        .fill(Color("voca"))
+                        .frame(width: 350, height: 550)
+                        .cornerRadius(30)
                     
-                    if !success {
-                        word = [String](repeating: "", count: 20)
-                        meaning = [String](repeating: "", count: 20)
-                        vocabularyName = ""
+                    VStack (alignment: .leading, spacing: 10) {
+                        
+                        TextField("Vocaburaly Name", text: $vocabularyName)
+                            .frame(width: 300, height: 40)
+                            .padding(.leading, 20)
+                        
+                        Divider()
+                            .frame(width: 350)
+                        
+                        HStack(alignment: .center) {
+                            
+                            Text("word").padding(.leading, 30)
+                            Spacer()
+                            Text("meaning")
+                            
+                        }
+                        .frame(width: 300)
+                        
+                        Divider()
+                        
+                        ScrollView {
+                            ForEach(0..<20, id: \.self) { index in
+                                VocaburalyColumn(word: $word[index],
+                                                 meaning: $meaning[index], papago: $papago[index])
+                            }
+                            .frame(width: 350)
+                        }
+                        .frame(height: 400)
                     }
-                }
-                .alert(isPresented: $success) {
-                    Alert(title: Text("단어장 제목 혹은 내용이 비어있습니다."))
-                }
+                }.padding()
+                
+                RoundedButton(buttonText: "등록하기")
+                    .onTapGesture {
+                        
+                        success = saveInfo(w: word, m: meaning, title: vocabularyName)
+                        
+                        if !success {
+                            word = [String](repeating: "", count: 20)
+                            meaning = [String](repeating: "", count: 20)
+                            vocabularyName = ""
+                        }
+                    }
+                    .alert(isPresented: $success) {
+                        Alert(title: Text("단어장 제목 혹은 내용이 비어있습니다."))
+                    }
+            }
         }
-        
     }
     
     func saveInfo(w: [String], m: [String], title: String) -> Bool {
@@ -86,12 +87,12 @@ struct CreateVocabulary: View {
         var meaning = [String]()
         
         for i in 0 ..< w.count {
-//            var mean: String
+            //            var mean: String
             if w[i] == "" || m[i] == "" { continue }
             
-//            if w[i] == "" { continue }
-//            else if m[i] == "" { mean = papago[i] }
-//            else { mean = m[i] }
+            //            if w[i] == "" { continue }
+            //            else if m[i] == "" { mean = papago[i] }
+            //            else { mean = m[i] }
             word.append(w[i])
             meaning.append(m[i])
         }
@@ -143,7 +144,7 @@ struct VocaburalyColumn: View {
                 Divider()
                 Spacer()
                 TextField(viewModel.text, text: $meaning)
-                    
+                
                     .focused($focusConfirm)
                     .onSubmit {
                         if meaning == "" {
@@ -159,7 +160,7 @@ struct VocaburalyColumn: View {
         
     }
     
-   
+    
     
 }
 
