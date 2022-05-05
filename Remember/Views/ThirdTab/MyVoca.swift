@@ -15,7 +15,7 @@ struct MyVoca: View {
         
         let word = voca.words
         let meaning = voca.meanings
-        let isCorrect = voca.isCorrect
+//        let isCorrect = voca.isCorrect
         
         VStack {
             ZStack {

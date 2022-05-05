@@ -85,7 +85,7 @@ struct CreateVocabulary: View {
         var meaning = [String]()
         
         for i in 0 ..< w.count {
-            var mean: String
+//            var mean: String
             if w[i] == "" || m[i] == "" { continue }
             
 //            if w[i] == "" { continue }
