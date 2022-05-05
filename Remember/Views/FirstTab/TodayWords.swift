@@ -35,20 +35,13 @@ struct TodayWords: View {
                                 isTapped[i].toggle()
                             }
                         
-                        if isTapped[i] {
-                            Text(meanings[i])
-                                .padding()
-                                //.font(.custom("나눔손글씨 세계적인 한글", size: 25))
-                            
-                        } else {
-                            Text(words[i])
-                                .padding()
-                                //.font(.custom("나눔손글씨 세계적인 한글", size: 25))
-                        }
+                        Text(meanings[i])
+                            .padding()
+                            .opacity(isTapped[i] ? 1 : 0)
                         
-//                        Text(word)
-//                            .fontWeight(.bold)
-//                            .padding()
+                        Text(words[i])
+                            .padding()
+                            .opacity(isTapped[i] ? 0 : 1)
                     }
                 }
             }
