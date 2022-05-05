@@ -9,10 +9,13 @@ import SwiftUI
 
 struct CreateVocabulary: View {
     
+   // @ObservedObject var viewModel = ViewModel()
+    
     @State var pressButton: Bool = false
     @State var vocabularyName = ""
     @State var word = [String](repeating: "", count: 20)
     @State var meaning = [String](repeating: "", count: 20)
+    @State var papago = [String](repeating: "", count: 20)
     @State var success = false
     
     let coreDM: CoreDataManager
@@ -50,7 +53,7 @@ struct CreateVocabulary: View {
                     ScrollView {
                         ForEach(0..<20, id: \.self) { index in
                             VocaburalyColumn(word: $word[index],
-                                             meaning: $meaning[index])
+                                             meaning: $meaning[index], papago: $papago[index])
                         }
                         .frame(width: 350)
                     }
@@ -82,9 +85,12 @@ struct CreateVocabulary: View {
         var meaning = [String]()
         
         for i in 0 ..< w.count {
-            
+            var mean: String
             if w[i] == "" || m[i] == "" { continue }
             
+//            if w[i] == "" { continue }
+//            else if m[i] == "" { mean = papago[i] }
+//            else { mean = m[i] }
             word.append(w[i])
             meaning.append(m[i])
         }
@@ -112,27 +118,58 @@ struct CreateVocabulary: View {
 
 struct VocaburalyColumn: View {
     
+    @ObservedObject var viewModel = ViewModel()
     @Binding var word: String
     @Binding var meaning: String
+    @Binding var papago: String
+    @State var placeHolder = ""
     
     var body: some View {
+        
         
         VStack {
             HStack(alignment: .firstTextBaseline, spacing: 10) {
                 
                 TextField("", text: $word)
+                    .onSubmit {
+                        //isComplete.toggle()
+//                        placeHolder = viewModel.requestAPI(sentence: word)
+//                        print(placeHolder)
+//                        print("hihihi")
+//                        viewModel.requestAPI(sentence: word)
+//                        print(placeHolder)
+//                        print("hihihi")
+                        viewModel.requestAPI(sentence: word)
+                        papago = viewModel.text
+                        
+                    }
                 
                 Divider()
                 Spacer()
+                TextField(viewModel.text, text: $meaning)
+                    .onSubmit {
+                        if meaning == "" {
+                            meaning = viewModel.text
+                        }
+                    }
                 
-                TextField("", text: $meaning)
+                
+                //meaning = viewModel.requestAPI(sentence: word)
+                //Text(viewModel.requestAPI(sentence: word))
+//                TextField(placeHolder, text: $meaning)
             }
             .frame(width: 300, height:50)
             
             Divider()
                 .frame(width: 350)
-        }
+        }//.onAppear(perform: word = viewModel.requestAPI(sentence: word))
     }
+    
+//    func getMeaning() -> String {
+//        viewModel.requestAPI(sentence: word)
+//    }
+   
+    
 }
 
 struct CreateVocabulary_Previews: PreviewProvider {
