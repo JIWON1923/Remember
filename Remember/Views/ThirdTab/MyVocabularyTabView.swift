@@ -22,9 +22,20 @@ struct MyVocabularyTabView: View {
                         Text(voca.title ?? "")
                     }
                 }
+                .onDelete(perform: { indexSet in
+                    indexSet.forEach { index  in
+                        let voca = vocas[index]
+                        coreDM.deleteVoca(voca: voca)
+                        populateVocas()
+                    }
+                })
             }
         }
         .onAppear(perform: { vocas = coreDM.getAllVoca() })
+    }
+    
+    private func populateVocas() {
+        vocas = coreDM.getAllVoca()
     }
 }
 

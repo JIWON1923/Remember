@@ -25,7 +25,7 @@ struct TestResult: View {
                     //shouldPopToRootView = false
                     voca.isCorrect = [Bool](repeating:false, count: voca.isCorrect!.count)
                     coreDM.updateVoca()
-                    coreDM.deleteVoca(test: voca)
+                    coreDM.deleteTestVoca(test: voca)
                     NavigationUtil.popToRootView()
                     
                 }

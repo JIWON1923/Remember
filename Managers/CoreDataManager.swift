@@ -107,8 +107,19 @@ class CoreDataManager {
         }
     }
     
-    func deleteVoca(test: TestVoca) {
+    func deleteTestVoca(test: TestVoca) {
         persistentContainer.viewContext.delete(test)
+        
+        do {
+            try persistentContainer.viewContext.save()
+        } catch {
+            persistentContainer.viewContext.rollback()
+            print("Failed to save Context \(error)")
+        }
+    }
+    
+    func deleteVoca(voca: Voca) {
+        persistentContainer.viewContext.delete(voca)
         
         do {
             try persistentContainer.viewContext.save()
