@@ -3,6 +3,15 @@
 
 에빙하우스의 망각곡선을 활용한 영어 단어 암기장
 
+
+## :pushpin: Features
+
+- **단어장 만들기** 영어단어 입력 시 단어 뜻 추천
+- **단어장 추천** JSON을 이용한 단어장 제공기능
+- **단어 공부** 단어 뜻 숨기기, 보이기 조절 가능
+- **테스트** 단어 암기 척도 확인 기능
+
+
 ## :framed_picture: Demo
 
 ![Demo](https://user-images.githubusercontent.com/68676844/167009346-1b3f9ff7-df1a-4fe0-a1d9-6056002ae0c5.gif)
