@@ -1,4 +1,4 @@
-
+![Logo](https://user-images.githubusercontent.com/68676844/168470692-086e1225-7bb1-48bf-842d-dbf837d9650c.png)
 # :iphone: Remember
 
 에빙하우스의 망각곡선을 활용한 영어 단어 암기장
